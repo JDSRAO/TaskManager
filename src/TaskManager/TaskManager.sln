@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Models", "TaskM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Business", "TaskManager.Business\TaskManager.Business.csproj", "{A8B45581-85F5-47B4-9C45-517CC5EECAA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.UI.WPF", "TaskManager.UI.WPF\TaskManager.UI.WPF.csproj", "{90EA5F42-ED9B-47C0-BB03-8A8B4CD0C07C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A8B45581-85F5-47B4-9C45-517CC5EECAA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8B45581-85F5-47B4-9C45-517CC5EECAA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8B45581-85F5-47B4-9C45-517CC5EECAA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90EA5F42-ED9B-47C0-BB03-8A8B4CD0C07C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90EA5F42-ED9B-47C0-BB03-8A8B4CD0C07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90EA5F42-ED9B-47C0-BB03-8A8B4CD0C07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90EA5F42-ED9B-47C0-BB03-8A8B4CD0C07C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
