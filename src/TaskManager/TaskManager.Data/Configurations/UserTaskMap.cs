@@ -22,7 +22,7 @@ namespace TaskManager.Data.Configurations
             Property(x => x.StartedAt);
             Property(x => x.TotalTimeTaken);
 
-            HasEntitySetName("UserTasks");
+            ToTable("UserTasks");
         }
     }
 }
