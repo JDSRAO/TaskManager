@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:TaskManager.UI.WPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Images/Images.xaml"/>
+                <ResourceDictionary Source="Styles/Styles.xaml"/>
+                <ResourceDictionary Source="Convertors/Convertors.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
