@@ -50,7 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\UserTaskMap.cs" />
-    <Compile Include="DBConfiguration.cs" />
+    <Compile Include="Migrations\201905091627486_DBSetup.cs" />
+    <Compile Include="Migrations\201905091627486_DBSetup.Designer.cs">
+      <DependentUpon>201905091627486_DBSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TaskDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,7 +62,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905091627486_DBSetup.resx">
+      <DependentUpon>201905091627486_DBSetup.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TaskManager.Models\TaskManager.Models.csproj">
       <Project>{0679e3ec-d11b-4af0-9a52-5732c4dff8b9}</Project>
