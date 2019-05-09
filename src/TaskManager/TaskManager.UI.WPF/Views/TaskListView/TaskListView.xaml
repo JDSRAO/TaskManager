@@ -22,6 +22,8 @@
                     <StackPanel>
                         <Label Content="{Binding Path=ID}"/>
                         <Label Content="{Binding Path=Title}"/>
+                        <Label Content="{Binding Path=Description}"/>
+                        <Label Content="{Binding Path=TargetDate}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
