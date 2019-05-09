@@ -16,7 +16,7 @@ namespace TaskManager.UI.WPF.Views.TaskListView
 
         public TaskListViewModel()
         {
-            Tasks = taskManager.GetTasks();
+            Tasks = taskManager.GetTasks().OrderByDescending(x => x.TargetDate).ToList();
         }
     }
 }
