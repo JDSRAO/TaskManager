@@ -11,7 +11,7 @@ namespace TaskManager.Business
     {
         private TaskDataContext context = new TaskDataContext();
 
-        public List<UserTask> GetTasks(Func<UserTask,bool> predicate)
+        public List<UserTask> GetTasks(Func<UserTask, bool> predicate)
         {
             return context.UserTasks.Where(predicate).ToList();
         }
@@ -19,7 +19,7 @@ namespace TaskManager.Business
         public UserTask GetTask(Guid id)
         {
             var task = context.UserTasks.Where(x => x.ID == id).FirstOrDefault();
-            if(task != null)
+            if (task != null)
             {
                 return task;
             }
