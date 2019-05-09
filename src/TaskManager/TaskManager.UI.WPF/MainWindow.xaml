@@ -9,18 +9,32 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <ScrollViewer Grid.Row="0" Grid.Column="0">
-            <views:TaskListView
+        <Menu Grid.Row="0" Grid.Column="0">
+            <MenuItem Header="File">
+                <MenuItem Header="Open" x:Name="MI_Open"/>
+                <Separator/>
+                <MenuItem Header="Exit" x:Name="MI_ExitApp"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About Video Manager"/>
+            </MenuItem>
+        </Menu>
+
+        <GroupBox Grid.Row="1" Grid.Column="0" Header="Tasks">
+            <ScrollViewer>
+                <views:TaskListView
                             Width="Auto"
                             Height="Auto"
                             x:Name="tasks">
-            </views:TaskListView>
-        </ScrollViewer>
+                </views:TaskListView>
+            </ScrollViewer>
+        </GroupBox>
     </Grid>
 </Window>
