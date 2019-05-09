@@ -1,9 +1,11 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using TaskManager.Data;
 using TaskManager.Models;
+using TaskManager.Models.DTO;
 using TaskManager.Models.Entity;
 
 namespace TaskManager.Business
@@ -12,17 +14,20 @@ namespace TaskManager.Business
     {
         private TaskDataContext context = new TaskDataContext();
 
-        public List<UserTask> GetTasks(Func<UserTask, bool> predicate)
+        public List<UserTaskDto> GetTasks(Func<UserTask, bool> predicate)
         {
-            return context.UserTasks.Where(predicate).ToList();
+            var tasks = context.UserTasks.Where(predicate).ToList();
+            var tasksDto = Mapper.Map<List<UserTaskDto>>(tasks);
+            return tasksDto;
         }
 
-        public UserTask GetTask(Guid id)
+        public UserTaskDto GetTask(Guid id)
         {
             var task = context.UserTasks.Where(x => x.ID == id).FirstOrDefault();
             if (task != null)
             {
-                return task;
+                var taskDto = Mapper.Map<UserTaskDto>(task);
+                return taskDto;
             }
             throw new KeyNotFoundException("Task not found");
         }

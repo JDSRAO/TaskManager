@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entity = TaskManager.Models.Entity;
-using Dto = TaskManager.Models.DTO;
+using TaskManager.Models.Entity;
+using TaskManager.Models.DTO;
 
 namespace TaskManager.Models
 {
@@ -19,7 +19,7 @@ namespace TaskManager.Models
             {
                 Mapper.Initialize(cfg =>
                 {
-                    cfg.CreateMap<Entity.UserTask, Dto.UserTaskDto>();
+                    cfg.CreateMap<UserTask, UserTaskDto>();
                 });
                 _isInitialized = true;
             }
