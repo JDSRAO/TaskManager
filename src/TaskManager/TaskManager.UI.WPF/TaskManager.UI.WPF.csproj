@@ -138,5 +138,11 @@
   <ItemGroup>
     <Folder Include="Commands\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="Images\clipboard.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

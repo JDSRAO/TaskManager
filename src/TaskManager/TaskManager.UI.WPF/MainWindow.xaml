@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TaskManager.UI.WPF"
         mc:Ignorable="d"
         xmlns:views="clr-namespace:TaskManager.UI.WPF.Views.TaskListView"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Icon="{StaticResource AppIcon}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
