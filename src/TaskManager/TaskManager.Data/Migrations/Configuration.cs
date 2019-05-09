@@ -32,6 +32,7 @@ namespace TaskManager.Data.Migrations
                     Description = $"Description {i}",
                     CreatedAt = DateTime.Now,
                     StartedAt = DateTime.Now,
+                    TargetDate = DateTime.Now.AddDays(i),
                     IsEnded = false,
                     IsSuspended = false
                 };

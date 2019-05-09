@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201905091633258_AddedSeedData.Designer.cs">
       <DependentUpon>201905091633258_AddedSeedData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905091645495_AddedTargetDateProperty.cs" />
+    <Compile Include="Migrations\201905091645495_AddedTargetDateProperty.Designer.cs">
+      <DependentUpon>201905091645495_AddedTargetDateProperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TaskDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905091633258_AddedSeedData.resx">
       <DependentUpon>201905091633258_AddedSeedData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905091645495_AddedTargetDateProperty.resx">
+      <DependentUpon>201905091645495_AddedTargetDateProperty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

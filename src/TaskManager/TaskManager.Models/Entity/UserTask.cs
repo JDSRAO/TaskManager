@@ -11,6 +11,7 @@ namespace TaskManager.Models.Entity
         public string Title { get; set; }
         public string Description { get; set; }
         public DateTime StartedAt { get; set; }
+        public DateTime TargetDate { get; set; }
         public DateTime? EndedAt { get; set; }
         public TimeSpan TotalTimeTaken { get; set; }
         public bool IsSuspended { get; set; }
