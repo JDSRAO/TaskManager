@@ -45,6 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,6 +65,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\TaskListView\TaskListView.xaml.cs">
+      <DependentUpon>TaskListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskListView\TaskListViewModel.cs" />
     <Page Include="Convertors\Convertors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -84,6 +90,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Styles\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TaskListView\TaskListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

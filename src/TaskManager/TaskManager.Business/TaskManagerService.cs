@@ -10,13 +10,22 @@ using TaskManager.Models.Entity;
 
 namespace TaskManager.Business
 {
-    public class TaskManager : BaseManager
+    public class TaskManagerService : BaseManager
     {
         private TaskDataContext context = new TaskDataContext();
 
-        public List<UserTaskDto> GetTasks(Func<UserTask, bool> predicate)
+        public List<UserTaskDto> GetTasks(Func<UserTask, bool> predicate = null)
         {
-            var tasks = context.UserTasks.Where(predicate).ToList();
+            List<UserTask> tasks;
+            if(predicate != null)
+            {
+                tasks = context.UserTasks.Where(predicate).ToList();
+            }
+            else
+            {
+                tasks = context.UserTasks.ToList();
+            }
+            
             var tasksDto = Mapper.Map<List<UserTaskDto>>(tasks);
             return tasksDto;
         }
