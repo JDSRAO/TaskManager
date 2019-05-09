@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\UserTaskMap.cs" />
     <Compile Include="DBConfiguration.cs" />
     <Compile Include="TaskDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,9 +57,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Configurations\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\TaskManager.Models\TaskManager.Models.csproj">
       <Project>{0679e3ec-d11b-4af0-9a52-5732c4dff8b9}</Project>

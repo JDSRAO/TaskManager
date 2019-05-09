@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TaskManager.Models
 {
-    public class Task : BaseEntity
+    public class UserTask : BaseEntity
     {
         public string Title { get; set; }
         public string Description { get; set; }

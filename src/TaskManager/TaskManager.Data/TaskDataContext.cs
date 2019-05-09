@@ -6,11 +6,14 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using TaskManager.Models;
 
 namespace TaskManager.Data
 {
     public class TaskDataContext : DbContext
     {
+        public DbSet<UserTask> UserTasks { get; set; }
+
         public TaskDataContext() : base("name=DbConnectionString")
         {
 
