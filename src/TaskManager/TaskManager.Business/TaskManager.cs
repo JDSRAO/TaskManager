@@ -4,10 +4,11 @@ using System.Linq;
 using System.Linq.Expressions;
 using TaskManager.Data;
 using TaskManager.Models;
+using TaskManager.Models.Entity;
 
 namespace TaskManager.Business
 {
-    public class TaskManager
+    public class TaskManager : BaseManager
     {
         private TaskDataContext context = new TaskDataContext();
 

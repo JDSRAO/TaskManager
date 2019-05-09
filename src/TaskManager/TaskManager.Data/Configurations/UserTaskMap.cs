@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TaskManager.Models;
+using TaskManager.Models.Entity;
 
 namespace TaskManager.Data.Configurations
 {

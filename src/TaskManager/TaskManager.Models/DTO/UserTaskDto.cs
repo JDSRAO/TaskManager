@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TaskManager.Models
+namespace TaskManager.Models.DTO
 {
-    public class UserTask : BaseEntity
+    public class UserTaskDto : BaseDto
     {
         public string Title { get; set; }
         public string Description { get; set; }
