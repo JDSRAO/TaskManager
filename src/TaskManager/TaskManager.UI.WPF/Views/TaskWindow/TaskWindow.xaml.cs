@@ -18,10 +18,26 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
     /// Interaction logic for TaskWindow.xaml
     /// </summary>
     public partial class TaskWindow : Window
-    {
-        public TaskWindow()
+    {        
+        public TaskWindow(bool isEditMode = false)
         {
+            IsEditMode = isEditMode;
+            SetTitle();
             InitializeComponent();
         }
+
+        private void SetTitle()
+        {
+            if (IsEditMode)
+            {
+                Title = "Edit Task";
+            }
+            else
+            {
+                Title = "Add Task";
+            }
+        }
+
+        private bool IsEditMode { get; }
     }
 }
