@@ -3,4 +3,8 @@
                     xmlns:local="clr-namespace:TaskManager.UI.WPF.Images">
 
     <BitmapImage x:Key="AppIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/TaskManager.UI.WPF;component/Images/icon.ico"/>
+    <BitmapImage x:Key="searchIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/TaskManager.UI.WPF;component/Images/icons8-search-32.png"/>
+    <BitmapImage x:Key="startIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/TaskManager.UI.WPF;component/Images/icons8-play-32.png"/>
+    <BitmapImage x:Key="stopIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/TaskManager.UI.WPF;component/Images/icons8-stop-32.png"/>
+    <BitmapImage x:Key="pauseIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/TaskManager.UI.WPF;component/Images/icons8-pause-32.png"/>
 </ResourceDictionary>

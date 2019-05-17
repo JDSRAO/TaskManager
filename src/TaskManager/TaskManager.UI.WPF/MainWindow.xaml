@@ -28,13 +28,11 @@
         </Menu>
 
         <GroupBox Grid.Row="1" Grid.Column="0" Header="Tasks">
-            <ScrollViewer>
-                <views:TaskListView
+            <views:TaskListView
                             Width="Auto"
                             Height="Auto"
                             x:Name="tasks">
-                </views:TaskListView>
-            </ScrollViewer>
+            </views:TaskListView>
         </GroupBox>
     </Grid>
 </Window>
