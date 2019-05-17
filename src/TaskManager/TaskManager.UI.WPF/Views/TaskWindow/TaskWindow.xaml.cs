@@ -23,6 +23,7 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
         {
             IsEditMode = isEditMode;
             SetTitle();
+            DataContext = new TaskWindowModel();
             InitializeComponent();
         }
 
