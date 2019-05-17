@@ -33,7 +33,7 @@
                 x:Name="BtnAddTask"
                 Content="Add Task"
                 ToolTip="Add Task"
-                HorizontalAlignment="Right"
+                HorizontalAlignment="Right" Click="BtnAddTask_Click"
                 />
         </StackPanel>
         

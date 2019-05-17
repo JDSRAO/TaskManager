@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TaskManager.UI.WPF.Views.TaskWindow;
 
 namespace TaskManager.UI.WPF
 {
@@ -23,6 +24,12 @@ namespace TaskManager.UI.WPF
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void BtnAddTask_Click(object sender, RoutedEventArgs e)
+        {
+            var taskWindow = new TaskWindow();
+            taskWindow.ShowDialog();
         }
     }
 }
