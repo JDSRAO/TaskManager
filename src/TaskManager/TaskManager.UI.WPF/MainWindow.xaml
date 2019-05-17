@@ -9,7 +9,8 @@
         Title="MainWindow" Height="450" Width="800" Icon="{StaticResource AppIcon}">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -27,7 +28,16 @@
             </MenuItem>
         </Menu>
 
-        <GroupBox Grid.Row="1" Grid.Column="0" Header="Tasks">
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="5,5">
+            <Button 
+                x:Name="BtnAddTask"
+                Content="Add Task"
+                ToolTip="Add Task"
+                HorizontalAlignment="Right"
+                />
+        </StackPanel>
+        
+        <GroupBox Grid.Row="2" Grid.Column="0" Header="Tasks">
             <views:TaskListView
                             Width="Auto"
                             Height="Auto"
