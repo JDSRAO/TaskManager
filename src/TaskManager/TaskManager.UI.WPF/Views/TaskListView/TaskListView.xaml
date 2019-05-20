@@ -36,7 +36,8 @@
                         <Label Content="{Binding Path=ID}"/>
                         <Label Content="{Binding Path=Title}"/>
                         <Label Content="{Binding Path=Description}"/>
-                        <Label Content="{Binding Path=TargetDate}"/>
+                        <Label Content="{Binding Path=TargetDate, Converter={StaticResource HumanizeDateConvertor}, ConverterParameter=TargetDate}"/>
+                        <Label Content="{Binding Path=TotalTimeTaken, Converter={StaticResource HumanizeDateConvertor}, ConverterParameter=TotalTimeTaken}"/>
                         <!--<xctk:RichTextBox Text="{Binding Path=Description}">
                             <xctk:RichTextBoxFormatBarManager.FormatBar>
                                 <xctk:RichTextBoxFormatBar />
