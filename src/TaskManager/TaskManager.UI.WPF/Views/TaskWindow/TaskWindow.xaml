@@ -51,8 +51,8 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <xctk:DateTimePicker Grid.Row="0" Grid.Column="0" Text="{Binding Path=StartDate, Mode=TwoWay}"  />
-            <xctk:DateTimePicker Grid.Row="0" Grid.Column="1" Text="{Binding Path=TargetDate, Mode=TwoWay}"/>
+            <xctk:DateTimePicker Grid.Row="0" Grid.Column="0" Value="{Binding Path=StartDate, Mode=TwoWay}"  />
+            <xctk:DateTimePicker Grid.Row="0" Grid.Column="1" Value="{Binding Path=TargetDate, Mode=TwoWay}"/>
 
         </Grid>
 
