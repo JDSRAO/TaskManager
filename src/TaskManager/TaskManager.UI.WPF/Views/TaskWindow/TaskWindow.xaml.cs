@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TaskManager.Models.DTO;
 
 namespace TaskManager.UI.WPF.Views.TaskWindow
 {
@@ -19,11 +20,28 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
     /// </summary>
     public partial class TaskWindow : Window
     {        
-        public TaskWindow(bool isEditMode = false)
+        public TaskWindow(UserTaskDto task = null)
         {
-            IsEditMode = isEditMode;
+            if(task == null)
+            {
+                IsEditMode = false;
+                DataContext = new TaskWindowModel();
+            }
+            else
+            {
+                IsEditMode = true;
+                var context = new TaskWindowModel
+                {
+                    Title = task.Title,
+                    Description = task.Description,
+                    TargetDate = task.TargetDate,
+                    StartDate = task.StartedAt
+                };
+                DataContext = context;
+            }
+            
             SetTitle();
-            DataContext = new TaskWindowModel();
+            
             InitializeComponent();
         }
 

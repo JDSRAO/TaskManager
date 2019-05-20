@@ -29,7 +29,7 @@
 
         <ListBox Grid.Column="0" Grid.Row="1"
                  ItemsSource="{Binding Tasks}"
-                 x:Name="tasks">
+                 x:Name="tasks" MouseDoubleClick="Tasks_MouseDoubleClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

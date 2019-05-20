@@ -22,15 +22,15 @@
         </Grid.ColumnDefinitions>
 
 
-        <xctk:WatermarkTextBox Grid.Row="0" Grid.Column="0">
+        <xctk:WatermarkTextBox Grid.Row="0" Grid.Column="0" Text="{Binding Path=Title, Mode=TwoWay}">
             <xctk:WatermarkTextBox.Watermark>
-                <TextBlock Text="{Binding Path=Title, Mode=TwoWay}" Margin="4,0,0,0" />
+                <TextBlock Text="Title" Margin="4,0,0,0" />
             </xctk:WatermarkTextBox.Watermark>
         </xctk:WatermarkTextBox>
 
-        <xctk:WatermarkTextBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="2">
+        <xctk:WatermarkTextBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Text="{Binding Path=Description, Mode=TwoWay}">
             <xctk:WatermarkTextBox.Watermark>
-                <TextBlock Text="{Binding Path=Description, Mode=TwoWay}" Margin="4,0,0,0" />
+                <TextBlock Text="Description" Margin="4,0,0,0" />
             </xctk:WatermarkTextBox.Watermark>
         </xctk:WatermarkTextBox>
 
