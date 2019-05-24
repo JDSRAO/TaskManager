@@ -39,6 +39,7 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
                 IsEditMode = true;
                 context = new TaskWindowModel
                 {
+                    ID = task.ID,
                     Title = task.Title,
                     Description = task.Description,
                     TargetDate = task.TargetDate,
