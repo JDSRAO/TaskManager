@@ -20,6 +20,7 @@ namespace TaskManager.Models
                 Mapper.Initialize(cfg =>
                 {
                     cfg.CreateMap<UserTask, UserTaskDto>();
+                    cfg.CreateMap<UserTaskDto, UserTask>();
                 });
                 _isInitialized = true;
             }
