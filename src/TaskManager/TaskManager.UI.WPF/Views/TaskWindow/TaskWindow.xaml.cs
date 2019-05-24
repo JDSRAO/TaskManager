@@ -19,18 +19,25 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
     /// Interaction logic for TaskWindow.xaml
     /// </summary>
     public partial class TaskWindow : Window
-    {        
+    {
+        private TaskWindowModel context;
+
         public TaskWindow(UserTaskDto task = null)
         {
-            if(task == null)
+            if (task == null)
             {
                 IsEditMode = false;
-                DataContext = new TaskWindowModel();
+                context = new TaskWindowModel
+                {
+                    StartDate = DateTime.Now,
+                    TargetDate = DateTime.Now.AddDays(1)
+                };
+                DataContext = context;
             }
             else
             {
                 IsEditMode = true;
-                var context = new TaskWindowModel
+                context = new TaskWindowModel
                 {
                     Title = task.Title,
                     Description = task.Description,
@@ -39,10 +46,22 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
                 };
                 DataContext = context;
             }
-            
-            SetTitle();
-            
+
             InitializeComponent();
+            SetTitle();
+            SetVisibilityOfButtons();
+        }
+
+        private void SetVisibilityOfButtons()
+        {
+            if (IsEditMode)
+            {
+                Btn_AddTask.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                Btn_UpdateTask.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void SetTitle()

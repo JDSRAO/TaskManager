@@ -61,8 +61,8 @@
                     VerticalAlignment="Center"
                     Orientation="Horizontal">
             <Button x:Name="Btn_AddTask" Content="Add"/>
-            <Button x:Name="Btn_ResetTask"  Content="Reset" Margin="5,0"/>
             <Button x:Name="Btn_UpdateTask" Content="Update"/>
+            <Button x:Name="Btn_ResetTask"  Content="Reset" Margin="5,0"/>
         </StackPanel>
 
     </Grid>
