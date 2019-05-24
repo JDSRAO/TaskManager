@@ -21,25 +21,25 @@ namespace TaskManager.Data.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-            var tasks = new List<UserTask>();
+            //var tasks = new List<UserTask>();
 
-            for (int i = 0; i < 10; i++)
-            {
-                var task = new UserTask()
-                {
-                    ID = Guid.NewGuid(),
-                    Title = $"Title {i}",
-                    Description = $"Description {i}",
-                    CreatedAt = DateTime.Now,
-                    StartedAt = DateTime.Now,
-                    TargetDate = DateTime.Now.AddDays(i),
-                    IsEnded = false,
-                    IsSuspended = false
-                };
-                tasks.Add(task);
-            }
-            context.UserTasks.AddRange(tasks);
-            context.SaveChanges();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    var task = new UserTask()
+            //    {
+            //        ID = Guid.NewGuid(),
+            //        Title = $"Title {i}",
+            //        Description = $"Description {i}",
+            //        CreatedAt = DateTime.Now,
+            //        StartedAt = DateTime.Now,
+            //        TargetDate = DateTime.Now.AddDays(i),
+            //        IsEnded = false,
+            //        IsSuspended = false
+            //    };
+            //    tasks.Add(task);
+            //}
+            //context.UserTasks.AddRange(tasks);
+            //context.SaveChanges();
         }
     }
 }

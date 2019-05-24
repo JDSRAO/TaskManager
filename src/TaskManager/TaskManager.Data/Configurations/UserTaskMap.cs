@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace TaskManager.Data.Configurations
         {
             HasKey(x => x.ID);
 
+            Property(x => x.ID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.Title);
             Property(x => x.Description);
             Property(x => x.IsSuspended);
