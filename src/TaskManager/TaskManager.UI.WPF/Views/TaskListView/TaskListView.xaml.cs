@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TaskManager.Models.DTO;
 
 namespace TaskManager.UI.WPF.Views.TaskListView
 {
@@ -24,6 +25,13 @@ namespace TaskManager.UI.WPF.Views.TaskListView
         {
             InitializeComponent();
             DataContext = new TaskListViewModel();
+        }
+
+        private void Tasks_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selectedItem = tasks.SelectedItem as UserTaskDto;
+            var taskWindow = new TaskWindow.TaskWindow(selectedItem);
+            taskWindow.ShowDialog();
         }
     }
 }

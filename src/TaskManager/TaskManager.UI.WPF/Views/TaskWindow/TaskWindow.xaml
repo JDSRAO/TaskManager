@@ -1,0 +1,74 @@
+﻿<Window x:Class="TaskManager.UI.WPF.Views.TaskWindow.TaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManager.UI.WPF.Views.TaskWindow"
+        xmlns:xctk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        mc:Ignorable="d"
+        Height="200" Width="800"
+        Icon="{StaticResource AppIcon}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <xctk:WatermarkTextBox Grid.Row="0" Grid.Column="0" Text="{Binding Path=Title, Mode=TwoWay}">
+            <xctk:WatermarkTextBox.Watermark>
+                <TextBlock Text="Title" Margin="4,0,0,0" />
+            </xctk:WatermarkTextBox.Watermark>
+        </xctk:WatermarkTextBox>
+
+        <xctk:WatermarkTextBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Text="{Binding Path=Description, Mode=TwoWay}">
+            <xctk:WatermarkTextBox.Watermark>
+                <TextBlock Text="Description" Margin="4,0,0,0" />
+            </xctk:WatermarkTextBox.Watermark>
+        </xctk:WatermarkTextBox>
+
+        <!--<xctk:RichTextBox Text="Des" Grid.Row="2" Grid.Column="0">
+            <xctk:RichTextBoxFormatBarManager.FormatBar>
+                <xctk:RichTextBoxFormatBar />
+            </xctk:RichTextBoxFormatBarManager.FormatBar>
+        </xctk:RichTextBox>-->
+
+
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <xctk:DateTimePicker Grid.Row="0" Grid.Column="0" Value="{Binding Path=StartDate, Mode=TwoWay}"  />
+            <xctk:DateTimePicker Grid.Row="0" Grid.Column="1" Value="{Binding Path=TargetDate, Mode=TwoWay}"/>
+
+        </Grid>
+
+        <StackPanel Grid.Row="4" Grid.Column="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+            <Button x:Name="Btn_AddTask" 
+                    Command="{Binding AddTaskCommand}"
+                    Content="Add"/>
+            <Button x:Name="Btn_UpdateTask" 
+                    Content="Update"/>
+            <Button x:Name="Btn_ResetTask" 
+                    Content="Reset" 
+                    Margin="5,0"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
