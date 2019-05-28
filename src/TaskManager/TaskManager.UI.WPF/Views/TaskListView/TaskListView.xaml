@@ -18,7 +18,8 @@
 
         <ListBox Grid.Column="0" Grid.Row="1"
                  ItemsSource="{Binding Tasks}"
-                 x:Name="tasks" MouseDoubleClick="Tasks_MouseDoubleClick">
+                 x:Name="tasks" 
+                 MouseDoubleClick="Tasks_MouseDoubleClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -41,13 +42,19 @@
 
                         <StackPanel Grid.Column="1" Grid.Row="0" 
                                     VerticalAlignment="Center">
-                            <Button Style="{StaticResource IconButtonStyle}">
+                            <Button Style="{StaticResource IconButtonStyle}"
+                                    ToolTip="Start Task"
+                                    Command="{Binding StartTaskCommand}">
                                 <Image Source="{StaticResource startIcon}"/>
                             </Button>
-                            <Button Style="{StaticResource IconButtonStyle}">
+                            <Button Style="{StaticResource IconButtonStyle}"
+                                    ToolTip="Pause Task"
+                                    Command="{Binding PauseTaskCommand}">
                                 <Image Source="{StaticResource pauseIcon}"/>
                             </Button>
-                            <Button Style="{StaticResource IconButtonStyle}">
+                            <Button Style="{StaticResource IconButtonStyle}"
+                                    ToolTip="Stop Task"
+                                    Command="{Binding EndTaskCommand}">
                                 <Image Source="{StaticResource stopIcon}"/>
                             </Button>
                         </StackPanel>
