@@ -48,7 +48,7 @@ namespace TaskManager.UI.WPF.Views.TaskListView
                     context.PauseTaskCommand.Execute(taskId);
                     break;
                 case "StopTask":
-                    context.StartTaskCommand.Execute(taskId);
+                    context.EndTaskCommand.Execute(taskId);
                     break;
                 default:
                     break;
