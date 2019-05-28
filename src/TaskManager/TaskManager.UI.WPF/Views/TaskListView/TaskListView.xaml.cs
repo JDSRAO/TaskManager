@@ -33,5 +33,26 @@ namespace TaskManager.UI.WPF.Views.TaskListView
             var taskWindow = new TaskWindow.TaskWindow(selectedItem);
             taskWindow.ShowDialog();
         }
+
+        private void Btn_ModifyTask_Click(object sender, RoutedEventArgs e)
+        {
+            var context = (TaskListViewModel)DataContext;
+            var btn = sender as Button;
+            Guid taskId = Guid.NewGuid();
+            switch (btn.Name)
+            {
+                case "StartTask":
+                    context.StartTaskCommand.Execute(taskId);
+                    break;
+                case "PauseTask":
+                    context.PauseTaskCommand.Execute(taskId);
+                    break;
+                case "StopTask":
+                    context.StartTaskCommand.Execute(taskId);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

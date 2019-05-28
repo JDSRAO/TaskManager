@@ -50,6 +50,7 @@ namespace TaskManager.Business
                 task.IsSuspended = true;
                 var elapsedTime = DateTime.Now - task.StartedAt;
                 task.TotalTimeTaken = elapsedTime + task.TotalTimeTaken;
+                context.SaveChanges();
             }
             else
             {
@@ -64,6 +65,7 @@ namespace TaskManager.Business
             {
                 task.StartedAt = DateTime.Now;
                 task.IsSuspended = false;
+                context.SaveChanges();
             }
             else
             {
@@ -77,6 +79,7 @@ namespace TaskManager.Business
             if (task != null)
             {
                 task.IsEnded = true;
+                context.SaveChanges();
             }
             else
             {

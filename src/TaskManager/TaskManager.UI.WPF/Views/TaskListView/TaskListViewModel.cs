@@ -21,18 +21,38 @@ namespace TaskManager.UI.WPF.Views.TaskListView
         public TaskListViewModel()
         {
             taskManager = new TaskManagerService();
-            Tasks = taskManager.GetTasks().Where(x => x.IsEnded != true).OrderByDescending(x => x.TargetDate).ToList();
-            StartTaskCommand = new RelayCommand(ModifyTask);
-            PauseTaskCommand = new RelayCommand(ModifyTask);
-            EndTaskCommand = new RelayCommand(ModifyTask);
+            GetTasks();
+            StartTaskCommand = new RelayCommand(StartTask);
+            PauseTaskCommand = new RelayCommand(PauseTask);
+            EndTaskCommand = new RelayCommand(StopTask);
         }
 
-        private void ModifyTask(object obj)
+        private void StartTask(object obj)
         {
-            Task.Run(() => 
-            {
-                Console.WriteLine("Async task");
-            });
+            var id = (Guid)obj;
+            taskManager.ResumeTask(id);
+        }
+
+        private void PauseTask(object obj)
+        {
+            var id = (Guid)obj;
+            taskManager.PauseTask(id);
+        }
+
+        private void StopTask(object obj)
+        {
+            var id = (Guid)obj;
+            taskManager.EndTask(id);
+        }
+
+        private void GetTasks()
+        {
+            Tasks = taskManager.GetTasks().Where(x => x.IsEnded != true).OrderByDescending(x => x.TargetDate).ToList();
+        }
+
+        public void Refresh()
+        {
+            GetTasks();
         }
     }
 }
