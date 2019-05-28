@@ -27,24 +27,13 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
             if (task == null)
             {
                 IsEditMode = false;
-                context = new TaskWindowModel
-                {
-                    StartDate = DateTime.Now,
-                    TargetDate = DateTime.Now.AddDays(1)
-                };
+                context = new TaskWindowModel();
                 DataContext = context;
             }
             else
             {
                 IsEditMode = true;
-                context = new TaskWindowModel
-                {
-                    ID = task.ID,
-                    Title = task.Title,
-                    Description = task.Description,
-                    TargetDate = task.TargetDate,
-                    StartDate = task.StartedAt
-                };
+                context = new TaskWindowModel(task);
                 DataContext = context;
             }
 
