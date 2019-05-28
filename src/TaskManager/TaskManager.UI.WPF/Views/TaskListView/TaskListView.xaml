@@ -16,35 +16,43 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <!--<StackPanel Grid.Column="0" Grid.Row="0">
-            <xctk:WatermarkTextBox>
-                <xctk:WatermarkTextBox.Watermark>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="{StaticResource searchIcon}" Stretch="None" MaxHeight="20" MaxWidth="20" />
-                        <TextBlock Text="Enter First Name" Margin="4,0,0,0" />
-                    </StackPanel>
-                </xctk:WatermarkTextBox.Watermark>
-            </xctk:WatermarkTextBox>
-        </StackPanel>-->
-
         <ListBox Grid.Column="0" Grid.Row="1"
                  ItemsSource="{Binding Tasks}"
                  x:Name="tasks" MouseDoubleClick="Tasks_MouseDoubleClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <Label Content="{Binding Path=ID}"/>
-                        <Label Content="{Binding Path=Title}"/>
-                        <Label Content="{Binding Path=Description}"/>
-                        <Label Content="{Binding Path=TargetDate, Converter={StaticResource HumanizeDateConvertor}, ConverterParameter=TargetDate}"/>
-                        <Label Content="{Binding Path=TotalTimeTaken, Converter={StaticResource HumanizeDateConvertor}, ConverterParameter=TotalTimeTaken}"/>
-                        <!--<xctk:RichTextBox Text="{Binding Path=Description}">
-                            <xctk:RichTextBoxFormatBarManager.FormatBar>
-                                <xctk:RichTextBoxFormatBar />
-                            </xctk:RichTextBoxFormatBarManager.FormatBar>
-                        </xctk:RichTextBox>-->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
 
-                    </StackPanel>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".8*"/>
+                            <ColumnDefinition Width=".2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" Grid.Row="0">
+                            <Label Content="{Binding Path=ID}"/>
+                            <Label Content="{Binding Path=Title}"/>
+                            <Label Content="{Binding Path=Description}"/>
+                            <Label Content="{Binding Path=TargetDate, Converter={StaticResource HumanizeDateConvertor}, ConverterParameter=TargetDate}"/>
+                            <Label Content="{Binding Path=TotalTimeTaken, Converter={StaticResource HumanizeDateConvertor}, ConverterParameter=TotalTimeTaken}"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Grid.Row="0" 
+                                    VerticalAlignment="Center">
+                            <Button Style="{StaticResource IconButtonStyle}">
+                                <Image Source="{StaticResource startIcon}"/>
+                            </Button>
+                            <Button Style="{StaticResource IconButtonStyle}">
+                                <Image Source="{StaticResource pauseIcon}"/>
+                            </Button>
+                            <Button Style="{StaticResource IconButtonStyle}">
+                                <Image Source="{StaticResource stopIcon}"/>
+                            </Button>
+                        </StackPanel>
+
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
