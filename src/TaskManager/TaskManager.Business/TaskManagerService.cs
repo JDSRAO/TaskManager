@@ -84,15 +84,15 @@ namespace TaskManager.Business
             }
         }
 
-        public void AddTask()
+        public UserTaskDto AddTask(UserTaskDto newTask)
         {
-            var task = new UserTask()
-            {
-                Title = "",
-                Description = "",
-                CreatedAt = DateTime.Now,
-                StartedAt = DateTime.Now,
-            };
+            var task = Mapper.Map<UserTask>(newTask);
+            task.CreatedAt = DateTime.Now;
+
+            task = context.UserTasks.Add(task);
+            context.SaveChanges();
+            var taskDto = Mapper.Map<UserTaskDto>(task);
+            return taskDto;
         }
     }
 }
