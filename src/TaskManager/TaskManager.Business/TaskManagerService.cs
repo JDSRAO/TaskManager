@@ -114,7 +114,6 @@ namespace TaskManager.Business
             {
                 throw new KeyNotFoundException("Task not found");
             }
-            context.SaveChanges();
         }
     }
 }
