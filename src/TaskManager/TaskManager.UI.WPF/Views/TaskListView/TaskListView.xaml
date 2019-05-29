@@ -45,18 +45,21 @@
                             <Button Style="{StaticResource IconButtonStyle}"
                                     x:Name="StartTask"
                                     ToolTip="Start Task"
+                                    Tag="{Binding ID}"
                                     Click="Btn_ModifyTask_Click">
                                 <Image Source="{StaticResource startIcon}"/>
                             </Button>
                             <Button Style="{StaticResource IconButtonStyle}"
                                     x:Name="PauseTask"
                                     ToolTip="Pause Task"
+                                    Tag="{Binding ID}"
                                     Click="Btn_ModifyTask_Click">
                                 <Image Source="{StaticResource pauseIcon}"/>
                             </Button>
                             <Button Style="{StaticResource IconButtonStyle}"
                                     x:Name="StopTask"
                                     ToolTip="Stop Task"
+                                    Tag="{Binding ID}"
                                     Click="Btn_ModifyTask_Click">
                                 <Image Source="{StaticResource stopIcon}"/>
                             </Button>

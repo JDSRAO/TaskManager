@@ -38,7 +38,7 @@ namespace TaskManager.UI.WPF.Views.TaskListView
         {
             var context = (TaskListViewModel)DataContext;
             var btn = sender as Button;
-            Guid taskId = Guid.NewGuid();
+            Guid taskId = (Guid)btn.Tag;
             switch (btn.Name)
             {
                 case "StartTask":
