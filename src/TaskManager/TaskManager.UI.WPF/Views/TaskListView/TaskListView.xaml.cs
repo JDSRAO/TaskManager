@@ -36,7 +36,13 @@ namespace TaskManager.UI.WPF.Views.TaskListView
         {
             var selectedItem = tasks.SelectedItem as UserTaskDto;
             var taskWindow = new TaskWindow.TaskWindow(selectedItem);
+            taskWindow.Closing += TaskWindow_Closing;
             taskWindow.ShowDialog();
+        }
+
+        private void TaskWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SetDataContext();
         }
 
         private void Btn_ModifyTask_Click(object sender, RoutedEventArgs e)
