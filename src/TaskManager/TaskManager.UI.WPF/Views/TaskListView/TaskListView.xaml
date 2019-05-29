@@ -18,7 +18,8 @@
 
         <ListBox Grid.Column="0" Grid.Row="1"
                  ItemsSource="{Binding Tasks}"
-                 x:Name="tasks" MouseDoubleClick="Tasks_MouseDoubleClick">
+                 x:Name="tasks" 
+                 MouseDoubleClick="Tasks_MouseDoubleClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -41,13 +42,27 @@
 
                         <StackPanel Grid.Column="1" Grid.Row="0" 
                                     VerticalAlignment="Center">
-                            <Button Style="{StaticResource IconButtonStyle}">
+                            <Button Style="{StaticResource IconButtonStyle}"
+                                    x:Name="StartTask"
+                                    ToolTip="Start Task"
+                                    Tag="{Binding ID}"
+                                    Visibility="{Binding Path=IsSuspended, Converter={StaticResource VisibilityFromBoolConvertor}, ConverterParameter=IsSuspended}"
+                                    Click="Btn_ModifyTask_Click">
                                 <Image Source="{StaticResource startIcon}"/>
                             </Button>
-                            <Button Style="{StaticResource IconButtonStyle}">
+                            <Button Style="{StaticResource IconButtonStyle}"
+                                    x:Name="PauseTask"
+                                    ToolTip="Pause Task"
+                                    Tag="{Binding ID}"
+                                    Visibility="{Binding Path=IsSuspended, Converter={StaticResource InvertedVisibilityFromBoolConvertor}, ConverterParameter=IsSuspended}"
+                                    Click="Btn_ModifyTask_Click">
                                 <Image Source="{StaticResource pauseIcon}"/>
                             </Button>
-                            <Button Style="{StaticResource IconButtonStyle}">
+                            <Button Style="{StaticResource IconButtonStyle}"
+                                    x:Name="EndTask"
+                                    ToolTip="End Task"
+                                    Tag="{Binding ID}"
+                                    Click="Btn_ModifyTask_Click">
                                 <Image Source="{StaticResource stopIcon}"/>
                             </Button>
                         </StackPanel>
