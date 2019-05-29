@@ -24,21 +24,12 @@ namespace TaskManager.UI.WPF.Views.TaskListView
         public TaskListView()
         {
             InitializeComponent();
-            var context = GetContext();
-            context.ActionExecuted += Context_ActionExecuted;
-            DataContext = context;
-        }
-
-        private static TaskListViewModel GetContext()
-        {
-            return new TaskListViewModel();
+            SetDataContext();
         }
 
         private void Context_ActionExecuted(object sender, EventArgs e)
         {
-            var context = GetContext();
-            context.ActionExecuted += Context_ActionExecuted;
-            DataContext = context;
+            SetDataContext();
         }
 
         private void Tasks_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -67,6 +58,18 @@ namespace TaskManager.UI.WPF.Views.TaskListView
                 default:
                     break;
             }
+        }
+
+        private static TaskListViewModel GetContext()
+        {
+            return new TaskListViewModel();
+        }
+
+        private void SetDataContext()
+        {
+            var context = GetContext();
+            context.ActionExecuted += Context_ActionExecuted;
+            DataContext = context;
         }
     }
 }
