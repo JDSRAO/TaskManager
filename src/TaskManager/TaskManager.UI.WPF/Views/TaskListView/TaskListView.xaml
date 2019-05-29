@@ -59,8 +59,8 @@
                                 <Image Source="{StaticResource pauseIcon}"/>
                             </Button>
                             <Button Style="{StaticResource IconButtonStyle}"
-                                    x:Name="StopTask"
-                                    ToolTip="Stop Task"
+                                    x:Name="EndTask"
+                                    ToolTip="End Task"
                                     Tag="{Binding ID}"
                                     Click="Btn_ModifyTask_Click">
                                 <Image Source="{StaticResource stopIcon}"/>
