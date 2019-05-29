@@ -46,6 +46,7 @@
                                     x:Name="StartTask"
                                     ToolTip="Start Task"
                                     Tag="{Binding ID}"
+                                    Visibility="{Binding Path=IsSuspended, Converter={StaticResource VisibilityFromBoolConvertor}, ConverterParameter=IsSuspended}"
                                     Click="Btn_ModifyTask_Click">
                                 <Image Source="{StaticResource startIcon}"/>
                             </Button>
@@ -53,6 +54,7 @@
                                     x:Name="PauseTask"
                                     ToolTip="Pause Task"
                                     Tag="{Binding ID}"
+                                    Visibility="{Binding Path=IsSuspended, Converter={StaticResource InvertedVisibilityFromBoolConvertor}, ConverterParameter=IsSuspended}"
                                     Click="Btn_ModifyTask_Click">
                                 <Image Source="{StaticResource pauseIcon}"/>
                             </Button>
