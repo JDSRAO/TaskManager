@@ -47,7 +47,7 @@ namespace TaskManager.UI.WPF.Views.TaskListView
 
         private void GetTasks()
         {
-            Tasks = taskManager.GetTasks().Where(x => x.IsEnded != true).OrderByDescending(x => x.TargetDate).ToList();
+            Tasks = taskManager.GetTasks(x => x.IsEnded != true).OrderByDescending(x => x.TargetDate).ToList();
         }
 
         public void Refresh()
