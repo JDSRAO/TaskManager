@@ -79,6 +79,7 @@ namespace TaskManager.Business
             if (task != null)
             {
                 task.IsEnded = true;
+                task.EndedAt = DateTime.Now;
                 context.SaveChanges();
             }
             else
