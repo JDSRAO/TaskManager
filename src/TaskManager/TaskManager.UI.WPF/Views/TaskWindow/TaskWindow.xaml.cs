@@ -81,5 +81,19 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
                 MessageBox.Show("Error occurred while adding task");
             }
         }
+
+        private void Btn_UpdateTask_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var context = (TaskWindowModel)DataContext;
+                context.UpdateTaskCommand.Execute(null);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occurred while updating task");
+            }
+        }
     }
 }

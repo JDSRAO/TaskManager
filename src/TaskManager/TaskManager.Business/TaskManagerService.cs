@@ -98,5 +98,23 @@ namespace TaskManager.Business
             var taskDto = Mapper.Map<UserTaskDto>(task);
             return taskDto;
         }
+
+        public void UpdateTask(UserTaskDto newTask)
+        {
+            var task = Mapper.Map<UserTask>(newTask);
+            var dbTask = context.UserTasks.Where(x => x.ID == task.ID).FirstOrDefault();
+            if (dbTask != null)
+            {
+                dbTask.Title = task.Title;
+                dbTask.Description = task.Description;
+                dbTask.TargetDate = task.TargetDate;
+                context.SaveChanges();
+            }
+            else
+            {
+                throw new KeyNotFoundException("Task not found");
+            }
+            context.SaveChanges();
+        }
     }
 }

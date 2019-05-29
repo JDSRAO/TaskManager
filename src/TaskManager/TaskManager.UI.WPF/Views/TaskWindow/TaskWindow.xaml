@@ -64,6 +64,7 @@
                     Click="Btn_AddTask_Click"
                     Content="Add"/>
             <Button x:Name="Btn_UpdateTask" 
+                    Click="Btn_UpdateTask_Click"
                     Content="Update"/>
             <Button x:Name="Btn_ResetTask" 
                     Content="Reset" 
