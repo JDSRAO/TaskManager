@@ -48,6 +48,12 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
             set;
         }
 
+        public ICommand UpdateTaskCommand
+        {
+            get;
+            set;
+        }
+
         private Guid id { get; set; }
         private string title { get; set; }
         private string description { get; set; }
@@ -73,6 +79,20 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
             }
 
             AddTaskCommand = new RelayCommand(AddTask);
+            UpdateTaskCommand = new RelayCommand(UpdateTask);
+        }
+
+        private void UpdateTask(object obj)
+        {
+            var task = new UserTaskDto
+            {
+                ID = id,
+                Title = title,
+                Description = description,
+                StartedAt = startDate,
+                TargetDate = targetDate
+            };
+            taskManager.UpdateTask(task);
         }
 
         private void AddTask(object obj)

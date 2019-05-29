@@ -61,9 +61,10 @@
                     VerticalAlignment="Center"
                     Orientation="Horizontal">
             <Button x:Name="Btn_AddTask" 
-                    Command="{Binding AddTaskCommand}"
+                    Click="Btn_AddTask_Click"
                     Content="Add"/>
             <Button x:Name="Btn_UpdateTask" 
+                    Click="Btn_UpdateTask_Click"
                     Content="Update"/>
             <Button x:Name="Btn_ResetTask" 
                     Content="Reset" 
