@@ -67,5 +67,19 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
         }
 
         private bool IsEditMode { get; }
+
+        private void Btn_AddTask_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var context = (TaskWindowModel)DataContext;
+                context.AddTaskCommand.Execute(null);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occurred while adding task");
+            }
+        }
     }
 }
