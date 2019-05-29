@@ -71,7 +71,7 @@ namespace TaskManager.UI.WPF.Views.TaskListView
             return new TaskListViewModel();
         }
 
-        private void SetDataContext()
+        public void SetDataContext()
         {
             var context = GetContext();
             context.ActionExecuted += Context_ActionExecuted;

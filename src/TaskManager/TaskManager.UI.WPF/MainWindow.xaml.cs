@@ -29,7 +29,13 @@ namespace TaskManager.UI.WPF
         private void BtnAddTask_Click(object sender, RoutedEventArgs e)
         {
             var taskWindow = new TaskWindow();
+            taskWindow.Closing += TaskWindow_Closing;
             taskWindow.ShowDialog();
+        }
+
+        private void TaskWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            tasks.SetDataContext(); 
         }
     }
 }
