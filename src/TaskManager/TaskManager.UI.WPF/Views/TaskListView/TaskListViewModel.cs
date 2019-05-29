@@ -16,6 +16,8 @@ namespace TaskManager.UI.WPF.Views.TaskListView
         public ICommand StartTaskCommand { get; set; }
         public ICommand PauseTaskCommand { get; set; }
         public ICommand EndTaskCommand { get; set; }
+        public event EventHandler ActionExecuted;
+
         private TaskManagerService taskManager { get; }
 
         public TaskListViewModel()
@@ -24,35 +26,45 @@ namespace TaskManager.UI.WPF.Views.TaskListView
             GetTasks();
             StartTaskCommand = new RelayCommand(StartTask);
             PauseTaskCommand = new RelayCommand(PauseTask);
-            EndTaskCommand = new RelayCommand(StopTask);
-        }
-
-        private void StartTask(object obj)
-        {
-            var id = (Guid)obj;
-            taskManager.ResumeTask(id);
-        }
-
-        private void PauseTask(object obj)
-        {
-            var id = (Guid)obj;
-            taskManager.PauseTask(id);
-        }
-
-        private void StopTask(object obj)
-        {
-            var id = (Guid)obj;
-            taskManager.EndTask(id);
-        }
-
-        private void GetTasks()
-        {
-            Tasks = taskManager.GetTasks(x => x.IsEnded != true).OrderByDescending(x => x.TargetDate).ToList();
+            EndTaskCommand = new RelayCommand(EndTask);
         }
 
         public void Refresh()
         {
             GetTasks();
         }
+
+        private void StartTask(object obj)
+        {
+            var id = (Guid)obj;
+            taskManager.ResumeTask(id);
+            Notify();
+        }
+
+        private void PauseTask(object obj)
+        {
+            var id = (Guid)obj;
+            taskManager.PauseTask(id);
+            Notify();
+        }
+
+        private void EndTask(object obj)
+        {
+            var id = (Guid)obj;
+            taskManager.EndTask(id);
+            Notify();
+        }
+
+        private void GetTasks(bool isEnded = false)
+        {
+            Tasks = taskManager.GetTasks(x => x.IsEnded == isEnded).OrderByDescending(x => x.TargetDate).ToList();
+        }
+
+        private void Notify()
+        {
+            ActionExecuted?.Invoke(this, new EventArgs());
+        }
+
+        
     }
 }

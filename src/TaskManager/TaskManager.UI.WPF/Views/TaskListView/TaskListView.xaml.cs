@@ -24,7 +24,21 @@ namespace TaskManager.UI.WPF.Views.TaskListView
         public TaskListView()
         {
             InitializeComponent();
-            DataContext = new TaskListViewModel();
+            var context = GetContext();
+            context.ActionExecuted += Context_ActionExecuted;
+            DataContext = context;
+        }
+
+        private static TaskListViewModel GetContext()
+        {
+            return new TaskListViewModel();
+        }
+
+        private void Context_ActionExecuted(object sender, EventArgs e)
+        {
+            var context = GetContext();
+            context.ActionExecuted += Context_ActionExecuted;
+            DataContext = context;
         }
 
         private void Tasks_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -47,7 +61,7 @@ namespace TaskManager.UI.WPF.Views.TaskListView
                 case "PauseTask":
                     context.PauseTaskCommand.Execute(taskId);
                     break;
-                case "StopTask":
+                case "EndTask":
                     context.EndTaskCommand.Execute(taskId);
                     break;
                 default:
