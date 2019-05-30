@@ -62,7 +62,7 @@ namespace TaskManager.UI.WPF.Views.TaskListView
                     context.EndTaskCommand.Execute(taskId); 
                     break;
                 case "DeleteTask":
-                    var dialogResult = System.Windows.MessageBox.Show("Are you sure?", "Delete Confirmation", MessageBoxButton.YesNo);
+                    var dialogResult = MessageBox.Show("Are you sure?", "Delete Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
                     if (dialogResult == MessageBoxResult.Yes)  // error is here
                     {
                         context.DeleteTaskCommand.Execute(taskId);
