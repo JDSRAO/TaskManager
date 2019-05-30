@@ -40,10 +40,16 @@
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Grid.Row="0">
-                            <Label Content="{Binding Path=Title}"/>
+                            <Label Content="{Binding Path=Title}" 
+                                   Style="{StaticResource Title}"/>
                             <Label Content="{Binding Path=Description}"/>
-                            <Label Content="{Binding Path=TargetDate, Converter={StaticResource HumanizeDateConvertor}, ConverterParameter=TargetDate}"/>
-                            <Label Content="{Binding Path=TotalTimeTaken, Converter={StaticResource HumanizeDateConvertor}, ConverterParameter=TotalTimeTaken}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontWeight="Bold">Target Date :</Label>
+                                <Label  Content="{Binding Path=TargetDate, Converter={StaticResource HumanizeDateConvertor}, ConverterParameter=TargetDate}"/>
+                                <Label>|</Label>
+                                <Label FontWeight="Bold">Total Time Taken :</Label>
+                                <Label  Content="{Binding Path=TotalTimeTaken, Converter={StaticResource HumanizeDateConvertor}, ConverterParameter=TotalTimeTaken}"/>
+                            </StackPanel>
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" Grid.Row="0"
