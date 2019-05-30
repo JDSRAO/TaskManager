@@ -99,6 +99,20 @@ namespace TaskManager.Business
             return taskDto;
         }
 
+        public void DeleteTask(Guid id)
+        {
+            var task = context.UserTasks.Where(x => x.ID == id).FirstOrDefault();
+            if (task != null)
+            {
+                context.UserTasks.Remove(task);
+                context.SaveChanges();
+            }
+            else
+            {
+                throw new KeyNotFoundException("Task not found");
+            }
+        }
+
         public void UpdateTask(UserTaskDto newTask)
         {
             var task = Mapper.Map<UserTask>(newTask);
