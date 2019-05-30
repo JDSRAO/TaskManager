@@ -28,14 +28,25 @@
             </MenuItem>
         </Menu>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Margin="5,5">
+        <ToolBar Grid.Row="1" Grid.Column="0">
             <Button 
                 x:Name="BtnAddTask"
-                Content="Add Task"
+                Style="{StaticResource IconButtonStyle}"
                 ToolTip="Add Task"
-                HorizontalAlignment="Right" Click="BtnAddTask_Click"
-                />
-        </StackPanel>
+                HorizontalAlignment="Right" Click="BtnAddTask_Click">
+                <Image Source="{StaticResource createIcon}"/>
+            </Button>
+        </ToolBar>
+
+        <!--<StackPanel Grid.Row="1" Grid.Column="0" Margin="5,5">
+            <Button 
+                x:Name="BtnAddTask"
+                Style="{StaticResource IconButtonStyle}"
+                ToolTip="Add Task"
+                HorizontalAlignment="Right" Click="BtnAddTask_Click">
+                <Image Source="{StaticResource createIcon}"/>
+            </Button>
+        </StackPanel>-->
         
         <GroupBox Grid.Row="2" Grid.Column="0" Header="Tasks">
             <views:TaskListView
