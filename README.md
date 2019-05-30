@@ -1,4 +1,4 @@
-# TaskManager
+# Task Manager
 Task manager meets all your requirements of managing task and captures the actual time spent on each task
 
 Features:
