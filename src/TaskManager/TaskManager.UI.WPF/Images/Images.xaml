@@ -9,4 +9,5 @@
     <BitmapImage x:Key="pauseIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/TaskManager.UI.WPF;component/Images/icons8-pause-32.png"/>
     <BitmapImage x:Key="deleteIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/TaskManager.UI.WPF;component/Images/icons8-trash-32.png"/>
     <BitmapImage x:Key="createIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/TaskManager.UI.WPF;component/Images/icons8-create-document-32.png"/>
+    <BitmapImage x:Key="taskIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/TaskManager.UI.WPF;component/Images/icons8-task-100.png"/>
 </ResourceDictionary>
