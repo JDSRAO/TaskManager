@@ -13,7 +13,12 @@ namespace TaskManager.Models.Entity
         public DateTime StartedAt { get; set; }
         public DateTime TargetDate { get; set; }
         public DateTime? EndedAt { get; set; }
-        public TimeSpan TotalTimeTaken { get; set; }
+        public TimeSpan TotalTimeTaken
+        {
+            get { return TimeSpan.FromTicks(TotalTimeTakenInTicks); }
+            set { TotalTimeTakenInTicks = value.Ticks; }
+        }
+        public long TotalTimeTakenInTicks { get; set; }
         public bool IsSuspended { get; set; }
         public bool IsEnded { get; set; }
     }
