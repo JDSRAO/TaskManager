@@ -16,6 +16,8 @@ namespace TaskManager.UI.WPF.Views.TaskListView
         public ICommand StartTaskCommand { get; set; }
         public ICommand PauseTaskCommand { get; set; }
         public ICommand EndTaskCommand { get; set; }
+        public ICommand DeleteTaskCommand { get; set; }
+
         public event EventHandler ActionExecuted;
 
         private TaskManagerService taskManager { get; }
@@ -27,6 +29,7 @@ namespace TaskManager.UI.WPF.Views.TaskListView
             StartTaskCommand = new RelayCommand(StartTask);
             PauseTaskCommand = new RelayCommand(PauseTask);
             EndTaskCommand = new RelayCommand(EndTask);
+            DeleteTaskCommand = new RelayCommand(DeleteTask);
         }
 
         public void Refresh()
@@ -52,6 +55,13 @@ namespace TaskManager.UI.WPF.Views.TaskListView
         {
             var id = (Guid)obj;
             taskManager.EndTask(id);
+            Notify();
+        }
+
+        private void DeleteTask(object obj)
+        {
+            var id = (Guid)obj;
+            taskManager.DeleteTask(id);
             Notify();
         }
 
