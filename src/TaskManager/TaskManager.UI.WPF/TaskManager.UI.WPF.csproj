@@ -166,7 +166,9 @@
       <Name>TaskManager.Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\icons8-trash-32.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\icon.ico" />
   </ItemGroup>

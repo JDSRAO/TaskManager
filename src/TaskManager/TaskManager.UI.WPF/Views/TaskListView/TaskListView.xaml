@@ -65,6 +65,13 @@
                                     Click="Btn_ModifyTask_Click">
                                 <Image Source="{StaticResource stopIcon}"/>
                             </Button>
+                            <Button Style="{StaticResource IconButtonStyle}"
+                                    x:Name="DeleteTask"
+                                    ToolTip="Delete Task"
+                                    Tag="{Binding ID}"
+                                    Click="Btn_ModifyTask_Click">
+                                <Image Source="{StaticResource deleteIcon}"/>
+                            </Button>
                         </StackPanel>
 
                     </Grid>
