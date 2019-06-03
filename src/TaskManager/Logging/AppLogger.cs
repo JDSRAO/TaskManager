@@ -43,7 +43,7 @@ namespace Logging
 
         private static IAppender GetFileAppender(string logFile)
         {
-            var layout = new PatternLayout("%date{MMM/dd/yyyy HH:mm:ss,fff} [%thread] %-5level %logger - %message%newline");
+            var layout = new PatternLayout("%newline%date{MMM/dd/yyyy HH:mm:ss,fff} [%thread] %-5level %logger - %message%newline%newline");
             layout.ActivateOptions(); // According to the docs this must be called as soon as any properties have been changed.
 
             var appender = new FileAppender
@@ -61,18 +61,21 @@ namespace Logging
 
         private static IAppender GetRollingFileAppender(string logFile)
         {
-            var layout = new PatternLayout("%date{MMM/dd/yyyy HH:mm:ss,fff} [%thread] %-5level %logger - %message%newline");
+            var layout = new PatternLayout("%date{MMM/dd/yyyy HH:mm:ss,fff} [%thread] %-5level %logger - %message%newline%newline");
             layout.ActivateOptions(); // According to the docs this must be called as soon as any properties have been changed.
+            var directory = Path.GetDirectoryName(logFile);
+            var fileName = Path.GetFileName(logFile);
+            var datePattern = $"_dd.MM.yyyy'.log'";
 
             RollingFileAppender roller = new RollingFileAppender
             {
-                AppendToFile = false,
+                AppendToFile = true,
                 File = logFile,
+                StaticLogFileName = false,
+                DatePattern = datePattern,
                 Layout = layout,
-                MaxSizeRollBackups = 5,
-                MaximumFileSize = "1GB",
-                RollingStyle = RollingFileAppender.RollingMode.Size,
-                StaticLogFileName = true
+                MaxSizeRollBackups = 2,
+                RollingStyle = RollingFileAppender.RollingMode.Date,
             };
             
             roller.ActivateOptions();
