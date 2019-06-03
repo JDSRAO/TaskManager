@@ -28,7 +28,7 @@ namespace Logging
             Hierarchy hierarchy = (Hierarchy)LogManager.GetRepository();
 
             PatternLayout patternLayout = new PatternLayout();
-            patternLayout.ConversionPattern = "%date [%thread] %-5level %logger - %message%newline";
+            patternLayout.ConversionPattern = "%date{MMM/dd/yyyy HH:mm:ss,fff} [%thread] %-5level %logger - %message%newline";
             patternLayout.ActivateOptions();
 
             RollingFileAppender roller = new RollingFileAppender();
