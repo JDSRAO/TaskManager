@@ -17,12 +17,12 @@ namespace TaskManager.UI.WPF.Convertors
             if(value is DateTime)
             {
                 var date = (DateTime) value;
-                return date.Humanize();
+                return date.Humanize(utcDate : false);
             }
             else if(value is TimeSpan)
             {
                 var date = (TimeSpan)value;
-                return date.Humanize();
+                return date.Humanize(2);
             }
             else
             {
