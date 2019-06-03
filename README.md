@@ -1,7 +1,7 @@
 # Task Manager
-Task manager meets all your requirements of managing task and captures the actual time spent on each task
+Ever wondered how much time does your task takes but never quite got a solution? Well your search ends here, task manager meets all your requirements of managing tasks and captures the actual time spent on each task and provides desktop notifications appropriately. 
 
-Features:
+### Features:
 - Add task
 - Edit/Update task
 - Delete task
