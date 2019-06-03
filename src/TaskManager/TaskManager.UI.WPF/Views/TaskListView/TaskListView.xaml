@@ -18,18 +18,21 @@
 
         <StackPanel Grid.Column="0" Grid.Row="0"
                     Orientation="Horizontal">
-            <xctk:WatermarkTextBox Width="300">
+            <xctk:WatermarkTextBox x:Name="ssearchQuery" Text="{Binding Path=SearchQuery, Mode=TwoWay}">
                 <xctk:WatermarkTextBox.Watermark>
-                    <TextBlock Text="Search..." />
+                    <TextBlock Text="Search Query" />
                 </xctk:WatermarkTextBox.Watermark>
             </xctk:WatermarkTextBox>
-            <Button Style="{StaticResource IconButtonStyle}" IsDefault="True">
+            <Button Style="{StaticResource IconButtonStyle}" 
+                    x:Name="SearchTasks"
+                    IsDefault="True" 
+                    Click="SearchTasks_Click">
                 <Image Source="{StaticResource searchIcon}"/>
             </Button>
         </StackPanel>
 
         <ListBox Grid.Column="0" Grid.Row="1"
-                 ItemsSource="{Binding Tasks}"
+                 ItemsSource="{Binding Tasks, Mode=OneWay}"
                  x:Name="tasks" 
                  MouseDoubleClick="Tasks_MouseDoubleClick">
             <ListBox.ItemTemplate>
