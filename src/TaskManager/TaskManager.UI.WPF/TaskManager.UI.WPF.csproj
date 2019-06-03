@@ -86,6 +86,7 @@
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Convertors\HumanizeDateConvertor.cs" />
     <Compile Include="Convertors\SetVisibilityFromBoolConvertor.cs" />
+    <Compile Include="Views\BaseViewModel.cs" />
     <Compile Include="Views\TaskListView\TaskListView.xaml.cs">
       <DependentUpon>TaskListView.xaml</DependentUpon>
     </Compile>

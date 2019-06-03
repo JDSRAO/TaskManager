@@ -61,9 +61,11 @@
                     VerticalAlignment="Center"
                     Orientation="Horizontal">
             <Button x:Name="Btn_AddTask" 
+                    IsDefault="True"
                     Click="Btn_AddTask_Click"
                     Content="Add"/>
             <Button x:Name="Btn_UpdateTask" 
+                    IsDefault="True"
                     Click="Btn_UpdateTask_Click"
                     Content="Update"/>
             <Button x:Name="Btn_ResetTask" 

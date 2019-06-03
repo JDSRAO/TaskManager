@@ -10,49 +10,41 @@ using TaskManager.UI.WPF.Commands;
 
 namespace TaskManager.UI.WPF.Views.TaskWindow
 {
-    public class TaskWindowModel
+    public class TaskWindowModel : BaseViewModel
     {
         public Guid ID
         {
             get => id;
-            set { id = value; }
+            set { id = value; OnPropertyChanged("ID"); }
         }
 
         public string Title
         {
             get => title;
-            set { title = value; }
+            set { title = value; OnPropertyChanged("Title"); }
         }
 
         public string Description
         {
             get => description;
-            set { description = value; }
+            set { description = value; OnPropertyChanged("Description"); }
         }
 
         public DateTime StartDate
         {
             get => startDate;
-            set { startDate = value; }
+            set { startDate = value; OnPropertyChanged("StartDate"); }
         }
 
         public DateTime TargetDate
         {
             get => targetDate;
-            set { targetDate = value; }
+            set { targetDate = value; OnPropertyChanged("TargetDate"); }
         }
 
-        public ICommand AddTaskCommand
-        {
-            get;
-            set;
-        }
+        public ICommand AddTaskCommand { get; set; }
 
-        public ICommand UpdateTaskCommand
-        {
-            get;
-            set;
-        }
+        public ICommand UpdateTaskCommand { get; set; }
 
         private Guid id { get; set; }
         private string title { get; set; }
