@@ -21,9 +21,24 @@ namespace Logging
         {
             IAppender fileAppender = null;
             var fileName = $"{Directory.GetCurrentDirectory()}/logs/{logFile}";
+            CreateDirectoryIfNotExists(fileName);
             fileAppender = (isRollingFile ? GetRollingFileAppender(fileName) : GetFileAppender(fileName));
             BasicConfigurator.Configure(fileAppender);
             ((Hierarchy)LogManager.GetRepository()).Root.Level = Level.Debug;
+        }
+
+        public static ILog GetLogger<T>()
+        {
+            return LogManager.GetLogger(typeof(T));
+        }
+
+        private static void CreateDirectoryIfNotExists(string fileName)
+        {
+            var directory = Path.GetDirectoryName(fileName);
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
         }
 
         private static IAppender GetFileAppender(string logFile)
@@ -90,11 +105,6 @@ namespace Logging
 
             hierarchy.Root.Level = Level.Info;
             hierarchy.Configured = true;
-        }
-
-        public static ILog GetLogger<T>()
-        {
-            return LogManager.GetLogger(typeof(T));
         }
     }
 }
