@@ -40,6 +40,15 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
             InitializeComponent();
             SetTitle();
             SetVisibilityOfButtons();
+            this.PreviewKeyDown += TaskWindow_PreviewKeyDown;
+        }
+
+        private void TaskWindow_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                Close();
+            }
         }
 
         private void SetVisibilityOfButtons()
