@@ -84,5 +84,12 @@ namespace TaskManager.UI.WPF.Views.TaskListView
             context.ActionExecuted += Context_ActionExecuted;
             DataContext = context;
         }
+
+        private void SearchTasks_Click(object sender, RoutedEventArgs e)
+        {
+            var context = (TaskListViewModel)DataContext;
+            context.SearchQuery = ssearchQuery.Text;
+            context.SearchTasksCommand.Execute(null);
+        }
     }
 }
