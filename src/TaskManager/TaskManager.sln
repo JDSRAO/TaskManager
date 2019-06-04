@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.UI.WPF", "TaskM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{BF2309F3-5CBF-4395-BD30-59B0BE5F5A6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.WindowsServices", "TaskManager.WindowsServices\TaskManager.WindowsServices.csproj", "{BC5312AE-632A-4742-99F9-AEB972789B29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{BF2309F3-5CBF-4395-BD30-59B0BE5F5A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF2309F3-5CBF-4395-BD30-59B0BE5F5A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF2309F3-5CBF-4395-BD30-59B0BE5F5A6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC5312AE-632A-4742-99F9-AEB972789B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC5312AE-632A-4742-99F9-AEB972789B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC5312AE-632A-4742-99F9-AEB972789B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC5312AE-632A-4742-99F9-AEB972789B29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
