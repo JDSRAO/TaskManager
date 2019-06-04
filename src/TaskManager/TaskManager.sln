@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.WindowsServices", "TaskManager.WindowsServices\TaskManager.WindowsServices.csproj", "{BC5312AE-632A-4742-99F9-AEB972789B29}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TaskManager.Installer", "TaskManager.Installer\TaskManager.Installer.vdproj", "{877FA1FB-31B2-4493-A7C3-9716D562F7BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,8 @@ Global
 		{BC5312AE-632A-4742-99F9-AEB972789B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC5312AE-632A-4742-99F9-AEB972789B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC5312AE-632A-4742-99F9-AEB972789B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{877FA1FB-31B2-4493-A7C3-9716D562F7BA}.Debug|Any CPU.ActiveCfg = Debug
+		{877FA1FB-31B2-4493-A7C3-9716D562F7BA}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
