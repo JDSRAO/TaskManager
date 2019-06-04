@@ -51,10 +51,6 @@ namespace TaskManager.UI.WPF
 
         private void LogUnhandledException(Exception exception, string source, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e = null)
         {
-            //if(e != null)
-            //{
-            //    e.Handled = true;
-            //}
             StringBuilder message = new StringBuilder();
             message.AppendLine($"Unhandled exception ({source})");
             try
