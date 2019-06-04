@@ -43,7 +43,7 @@ namespace Logging
 
         private static IAppender GetFileAppender(string logFile)
         {
-            var layout = new PatternLayout("%newline%date{MMM/dd/yyyy HH:mm:ss,fff} [%thread] %-5level %logger - %message%newline%newline");
+            var layout = new PatternLayout("%newline%date{MMM/dd/yyyy HH:mm:ss,fff} [%thread] %-5level %logger - %message%newline");
             layout.ActivateOptions(); // According to the docs this must be called as soon as any properties have been changed.
 
             var appender = new FileAppender
@@ -61,7 +61,7 @@ namespace Logging
 
         private static IAppender GetRollingFileAppender(string logFile)
         {
-            var layout = new PatternLayout("%date{MMM/dd/yyyy HH:mm:ss,fff} [%thread] %-5level %logger - %message%newline%newline");
+            var layout = new PatternLayout("%newline%date{MMM/dd/yyyy HH:mm:ss,fff} [%thread] %-5level %logger - %message%newline");
             layout.ActivateOptions(); // According to the docs this must be called as soon as any properties have been changed.
             var directory = Path.GetDirectoryName(logFile);
             var fileName = Path.GetFileName(logFile);
