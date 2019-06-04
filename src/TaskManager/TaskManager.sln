@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Business", "Tas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.UI.WPF", "TaskManager.UI.WPF\TaskManager.UI.WPF.csproj", "{90EA5F42-ED9B-47C0-BB03-8A8B4CD0C07C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{BF2309F3-5CBF-4395-BD30-59B0BE5F5A6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{90EA5F42-ED9B-47C0-BB03-8A8B4CD0C07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90EA5F42-ED9B-47C0-BB03-8A8B4CD0C07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90EA5F42-ED9B-47C0-BB03-8A8B4CD0C07C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF2309F3-5CBF-4395-BD30-59B0BE5F5A6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF2309F3-5CBF-4395-BD30-59B0BE5F5A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF2309F3-5CBF-4395-BD30-59B0BE5F5A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF2309F3-5CBF-4395-BD30-59B0BE5F5A6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

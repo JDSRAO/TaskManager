@@ -45,6 +45,7 @@
     <Reference Include="Humanizer, Version=2.6.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
       <HintPath>..\packages\Humanizer.Core.2.6.2\lib\netstandard2.0\Humanizer.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -86,6 +87,7 @@
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Convertors\HumanizeDateConvertor.cs" />
     <Compile Include="Convertors\SetVisibilityFromBoolConvertor.cs" />
+    <Compile Include="LoggingHelper.cs" />
     <Compile Include="Views\BaseViewModel.cs" />
     <Compile Include="Views\TaskListView\TaskListView.xaml.cs">
       <DependentUpon>TaskListView.xaml</DependentUpon>
@@ -158,6 +160,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{bf2309f3-5cbf-4395-bd30-59b0be5f5a6b}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TaskManager.Business\TaskManager.Business.csproj">
       <Project>{a8b45581-85f5-47b4-9c45-517cc5eecaa3}</Project>
       <Name>TaskManager.Business</Name>

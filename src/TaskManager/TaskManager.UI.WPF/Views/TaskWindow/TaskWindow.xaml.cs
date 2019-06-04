@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,7 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
     public partial class TaskWindow : Window
     {
         private TaskWindowModel context;
+        private static ILog Logger = LoggingHelper.GetLogger<TaskWindow>();
 
         public TaskWindow(UserTaskDto task = null)
         {
@@ -88,6 +90,7 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
             catch (Exception ex)
             {
                 MessageBox.Show("Error occurred while adding task");
+                Logger.Error(ex.Message, ex);
             }
         }
 
@@ -102,6 +105,7 @@ namespace TaskManager.UI.WPF.Views.TaskWindow
             catch (Exception ex)
             {
                 MessageBox.Show("Error occurred while updating task");
+                Logger.Error(ex.Message, ex);
             }
         }
     }
