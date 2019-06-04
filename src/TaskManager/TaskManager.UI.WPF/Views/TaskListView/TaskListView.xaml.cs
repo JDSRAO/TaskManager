@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,8 @@ namespace TaskManager.UI.WPF.Views.TaskListView
     /// </summary>
     public partial class TaskListView : UserControl
     {
+        private static ILog Logger = LoggingHelper.GetLogger<TaskListView>();
+
         public TaskListView()
         {
             InitializeComponent();
@@ -69,6 +72,7 @@ namespace TaskManager.UI.WPF.Views.TaskListView
                     }
                     break;
                 default:
+                    Logger.Error("No action of the specified name is found");
                     break;
             }
         }
@@ -90,6 +94,7 @@ namespace TaskManager.UI.WPF.Views.TaskListView
             var context = (TaskListViewModel)DataContext;
             context.SearchQuery = ssearchQuery.Text;
             context.SearchTasksCommand.Execute(null);
+            Logger.Info($"Search performed query : {ssearchQuery.Text}");
         }
     }
 }
