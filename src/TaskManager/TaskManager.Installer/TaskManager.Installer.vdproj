@@ -183,6 +183,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A42A1DDF79FB459A91FB3AA1D604C05E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A53BEA0278D92A793D7CF7AE76933253"
         "OwnerKey" = "8:_3EE4727C1F534958960642A9E23D4C8C"
         "MsmSig" = "8:_UNDEFINED"
@@ -1020,6 +1026,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A42A1DDF79FB459A91FB3AA1D604C05E"
+            {
+            "SourcePath" = "8:..\\TaskManager.UI.WPF\\Images\\icon.ico"
+            "TargetName" = "8:icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_2D8F343FFDC547F9BC36F6EAB6BD601C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A53BEA0278D92A793D7CF7AE76933253"
             {
             "AssemblyRegister" = "3:1"
@@ -1263,7 +1289,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TaskManager.Installer"
         "ProductCode" = "8:{ADA2750E-F5E0-4216-AD09-6F9FEB7230A7}"
-        "PackageCode" = "8:{EF06AD0A-6BE3-44B8-9E93-D4419342F814}"
+        "PackageCode" = "8:{0B35254D-ABE1-497D-9FCF-99BE354C5C79}"
         "UpgradeCode" = "8:{BDDC2F8B-3F12-4617-B4CC-BE5EC2D48174}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1383,6 +1409,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4DEDF0A7131640949457A5B52D0925F9"
+            {
+            "Name" = "8:Task Manager"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_3EE4727C1F534958960642A9E23D4C8C"
+            "Folder" = "8:_7A8483DA7B7B4C798262EF62B727A9FC"
+            "WorkingFolder" = "8:_2D8F343FFDC547F9BC36F6EAB6BD601C"
+            "Icon" = "8:_A42A1DDF79FB459A91FB3AA1D604C05E"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C9A7EB44E6134E89958918FA3D0DA25C"
+            {
+            "Name" = "8:Task Manager"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_3EE4727C1F534958960642A9E23D4C8C"
+            "Folder" = "8:_1FBB93DC933C40A38C61B50E02C74200"
+            "WorkingFolder" = "8:_2D8F343FFDC547F9BC36F6EAB6BD601C"
+            "Icon" = "8:_A42A1DDF79FB459A91FB3AA1D604C05E"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
