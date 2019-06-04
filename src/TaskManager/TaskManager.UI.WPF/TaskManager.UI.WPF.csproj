@@ -89,6 +89,9 @@
     <Compile Include="Convertors\SetVisibilityFromBoolConvertor.cs" />
     <Compile Include="LoggingHelper.cs" />
     <Compile Include="Views\BaseViewModel.cs" />
+    <Compile Include="Views\NotificationWindow\NotificationWindow.xaml.cs">
+      <DependentUpon>NotificationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TaskListView\TaskListView.xaml.cs">
       <DependentUpon>TaskListView.xaml</DependentUpon>
     </Compile>
@@ -118,6 +121,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Styles\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NotificationWindow\NotificationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

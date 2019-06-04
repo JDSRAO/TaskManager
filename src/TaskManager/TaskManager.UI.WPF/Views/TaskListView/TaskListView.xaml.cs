@@ -41,6 +41,8 @@ namespace TaskManager.UI.WPF.Views.TaskListView
             var taskWindow = new TaskWindow.TaskWindow(selectedItem);
             taskWindow.Closing += TaskWindow_Closing;
             taskWindow.ShowDialog();
+            var notification = new NotificationWindow.NotificationWindow();
+            notification.Show();
         }
 
         private void TaskWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
