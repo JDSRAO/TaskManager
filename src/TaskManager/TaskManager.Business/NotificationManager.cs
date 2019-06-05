@@ -22,14 +22,15 @@ namespace TaskManager.Business
             context = new TaskDataContext();
             timer = new Timer();
             timer.Elapsed += new ElapsedEventHandler(PushNotificationsToClient);
-            timer.Interval = 5000;
+            timer.Interval = 2000;
             timer.Enabled = true;
         }
 
         public List<UserTaskDto> GetNotifications(DateTime? dateTime = null)
         {
             var currentTime = dateTime ?? DateTime.Now;
-            var notifications = context.UserTasks.Where(x => (x.TargetDate - currentTime).Minutes <= 30).ToList();
+            var upperLimit = currentTime.AddHours(-1);
+            var notifications = context.UserTasks.Where(x => x.TargetDate < currentTime && x.TargetDate > upperLimit).ToList();
             var notificationsDto = DataMapper.Convert<List<UserTaskDto>>(notifications);
             return notificationsDto;
         }
