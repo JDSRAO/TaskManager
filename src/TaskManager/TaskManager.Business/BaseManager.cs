@@ -11,7 +11,7 @@ namespace TaskManager.Business
     {
         public BaseManager()
         {
-            MapperConfiguration.Initialize();
+            DataMapper.Initialize();
         }
     }
 }
