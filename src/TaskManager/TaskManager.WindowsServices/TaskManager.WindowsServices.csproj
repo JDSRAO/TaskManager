@@ -70,5 +70,19 @@
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{bf2309f3-5cbf-4395-bd30-59b0be5f5a6b}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaskManager.Business\TaskManager.Business.csproj">
+      <Project>{a8b45581-85f5-47b4-9c45-517cc5eecaa3}</Project>
+      <Name>TaskManager.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaskManager.Models\TaskManager.Models.csproj">
+      <Project>{0679e3ec-d11b-4af0-9a52-5732c4dff8b9}</Project>
+      <Name>TaskManager.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
