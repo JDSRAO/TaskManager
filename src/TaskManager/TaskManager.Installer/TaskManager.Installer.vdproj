@@ -1259,9 +1259,9 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_2D8F343FFDC547F9BC36F6EAB6BD601C"
             {
-            "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[AppDataFolder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:TARGETDIR"
@@ -1297,7 +1297,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Task Manager"
         "ProductCode" = "8:{ADA2750E-F5E0-4216-AD09-6F9FEB7230A7}"
-        "PackageCode" = "8:{5950E1D7-797E-476D-8095-23A435E3D173}"
+        "PackageCode" = "8:{41923F87-41C4-4D65-90C3-6ED7340007C2}"
         "UpgradeCode" = "8:{BDDC2F8B-3F12-4617-B4CC-BE5EC2D48174}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
