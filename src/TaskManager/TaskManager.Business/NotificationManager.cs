@@ -12,18 +12,11 @@ namespace TaskManager.Business
 {
     public class NotificationManager : BaseManager
     {
-        public event EventHandler<List<UserTaskDto>> Notifications;
-
         private TaskDataContext context { get; }
-        private Timer timer { get; }
 
         public NotificationManager()
         {
             context = new TaskDataContext();
-            timer = new Timer();
-            timer.Elapsed += new ElapsedEventHandler(PushNotificationsToClient);
-            timer.Interval = 2000;
-            timer.Enabled = true;
         }
 
         public List<UserTaskDto> GetNotifications(DateTime? dateTime = null)
@@ -35,10 +28,5 @@ namespace TaskManager.Business
             return notificationsDto;
         }
 
-        private void PushNotificationsToClient(object sender, ElapsedEventArgs e)
-        {
-            var notifications = GetNotifications();
-            Notifications?.Invoke(this, notifications);
-        }
     }
 }

@@ -89,6 +89,7 @@
     <Compile Include="Convertors\SetVisibilityFromBoolConvertor.cs" />
     <Compile Include="LoggingHelper.cs" />
     <Compile Include="Views\BaseViewModel.cs" />
+    <Compile Include="Views\Shell\MainWindowModel.cs" />
     <Compile Include="Views\TaskListView\TaskListView.xaml.cs">
       <DependentUpon>TaskListView.xaml</DependentUpon>
     </Compile>
