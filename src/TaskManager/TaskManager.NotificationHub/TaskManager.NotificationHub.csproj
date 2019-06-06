@@ -8,10 +8,11 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>TaskManager.NotificationHub</RootNamespace>
     <AssemblyName>TaskManager.NotificationHub</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -79,8 +80,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{bf2309f3-5cbf-4395-bd30-59b0be5f5a6b}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaskManager.Business\TaskManager.Business.csproj">
+      <Project>{a8b45581-85f5-47b4-9c45-517cc5eecaa3}</Project>
+      <Name>TaskManager.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaskManager.Models\TaskManager.Models.csproj">
+      <Project>{0679e3ec-d11b-4af0-9a52-5732c4dff8b9}</Project>
+      <Name>TaskManager.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
