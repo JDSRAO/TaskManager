@@ -22,7 +22,7 @@ namespace TaskManager.UI.WPF.Views.Shell
             }
         }
 
-        public event EventHandler PublishNotifications;
+        public event EventHandler<List<UserTaskDto>> PublishNotifications;
 
 
         private ObservableCollection<UserTaskDto> notifications { get; set; }
@@ -44,7 +44,7 @@ namespace TaskManager.UI.WPF.Views.Shell
             var notifications = notificationManagerManager.GetNotifications(startDate);
             if(notifications.Any())
             {
-                PublishNotifications?.Invoke(this, new EventArgs());
+                PublishNotifications?.Invoke(this, notifications);
             }
             Console.WriteLine("Notification triggered");
         }

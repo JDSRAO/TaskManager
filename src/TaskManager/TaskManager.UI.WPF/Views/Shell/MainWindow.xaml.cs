@@ -47,9 +47,8 @@ namespace TaskManager.UI.WPF
             DataContext = context;
         }
 
-        private void Context_PublishNotifications(object sender, EventArgs e)
+        private void Context_PublishNotifications(object sender, List<Models.DTO.UserTaskDto> e)
         {
-            throw new NotImplementedException();
         }
     }
 }
