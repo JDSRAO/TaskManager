@@ -14,6 +14,18 @@ namespace TaskManager.NotificationHub
     {
         private NotificationManager notificationManagerManager = new NotificationManager();
 
+        public override Task OnConnected()
+        {
+            Console.WriteLine($"{Clients.Caller} client connected");
+            return base.OnConnected();
+        }
+
+        public override Task OnDisconnected(bool stopCalled)
+        {
+            Console.WriteLine($"{Clients.Caller} client disconnected");
+            return base.OnDisconnected(stopCalled);
+        }
+
         public void PushNotifications()
         {
             var startDate = Convert.ToDateTime("2019-05-31 17:00:00.433");
