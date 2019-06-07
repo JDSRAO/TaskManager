@@ -30,13 +30,13 @@ namespace TaskManager.WindowsServices
             AppLogger.ConfigureFileAppender("ServiceLogs", true);
             NotificationHubConnection = new HubConnection("http://localhost:8080");
             NotificationHubProxy = NotificationHubConnection.CreateHubProxy("TaskManagerHub");
-            NotificationHubConnection.Start();
-            //NotificationHubConnection.Closed += OnNotificationHubConnectionClosed;
-            Logger.Info($"Connected with connection id : {NotificationHubConnection.ConnectionId}");
         }
 
-        protected override void OnStart(string[] args)
+        protected async override void OnStart(string[] args)
         {
+            await NotificationHubConnection.Start();
+            //NotificationHubConnection.Closed += OnNotificationHubConnectionClosed;
+            Logger.Info($"Connected connection id : {NotificationHubConnection.ConnectionId}");
             Logger.Info("Service started");
             timer = new Timer();
             timer.Elapsed += new ElapsedEventHandler(PushNotificationsToClient);
@@ -47,8 +47,10 @@ namespace TaskManager.WindowsServices
 
         protected override void OnStop()
         {
-            Logger.Info("Service stopped");
+            timer.Elapsed -= new ElapsedEventHandler(PushNotificationsToClient);
             NotificationHubConnection.Stop();
+            Logger.Info($"Disconnected connection id : {NotificationHubConnection.ConnectionId}");
+            Logger.Info("Service stopped");
         }
 
         private void OnNotificationHubConnectionClosed()
