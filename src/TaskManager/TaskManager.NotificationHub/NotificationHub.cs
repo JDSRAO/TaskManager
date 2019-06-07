@@ -37,7 +37,7 @@ namespace TaskManager.NotificationHub
             var notifications = notificationManagerManager.GetNotifications(startDate);
             if (notifications.Any())
             {
-                Clients.All.addMessage(notifications);
+                Clients.All.UnReadNotifications(notifications);
             }
         }
     }
