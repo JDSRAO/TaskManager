@@ -49,6 +49,10 @@ namespace TaskManager.UI.WPF
 
         private void Context_PublishNotifications(object sender, List<Models.DTO.UserTaskDto> e)
         {
+            this.Dispatcher.Invoke(() => 
+            {
+                SetDataContext();
+            });
         }
     }
 }
