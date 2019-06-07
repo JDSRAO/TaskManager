@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNet.SignalR;
+﻿using log4net;
+using Logging;
+using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 using System;
 using System.Collections.Generic;
@@ -13,16 +15,17 @@ namespace TaskManager.NotificationHub
     public class NotificationHub : Hub
     {
         private NotificationManager notificationManagerManager = new NotificationManager();
+        private ILog Logger = AppLogger.GetLogger<Program>();
 
         public override Task OnConnected()
         {
-            Console.WriteLine($"{Clients.Caller} client connected");
+            Logger.Info($"{Clients.Caller} client connected");
             return base.OnConnected();
         }
 
         public override Task OnDisconnected(bool stopCalled)
         {
-            Console.WriteLine($"{Clients.Caller} client disconnected");
+            Logger.Info($"{Clients.Caller} client disconnected");
             return base.OnDisconnected(stopCalled);
         }
 

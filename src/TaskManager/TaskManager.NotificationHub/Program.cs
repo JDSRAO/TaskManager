@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin.Cors;
+﻿using Logging;
+using Microsoft.Owin.Cors;
 using Microsoft.Owin.Hosting;
 using Owin;
 using System;
@@ -18,8 +19,11 @@ namespace TaskManager.NotificationHub
             // See http://msdn.microsoft.com/library/system.net.httplistener.aspx 
             // for more information.
             string url = "http://localhost:8080";
+            AppLogger.ConfigureFileAppender("SingalRHub", true);
+            var Logger = AppLogger.GetLogger<Program>();
             using (WebApp.Start(url))
             {
+                Logger.Info($"Server running on {url}");
                 Console.WriteLine("Server running on {0}", url);
                 Console.ReadLine();
             }
