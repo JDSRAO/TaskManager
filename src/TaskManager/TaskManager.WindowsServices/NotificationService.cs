@@ -48,8 +48,8 @@ namespace TaskManager.WindowsServices
         protected override void OnStop()
         {
             timer.Elapsed -= new ElapsedEventHandler(PushNotificationsToClient);
-            NotificationHubConnection.Stop();
             Logger.Info($"Disconnected connection id : {NotificationHubConnection.ConnectionId}");
+            NotificationHubConnection.Stop();
             Logger.Info("Service stopped");
         }
 
