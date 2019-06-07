@@ -19,13 +19,15 @@ namespace TaskManager.NotificationHub
 
         public override Task OnConnected()
         {
-            Logger.Info($"{Clients.Caller} client connected");
+            Console.WriteLine($"{Context.ConnectionId} client connected");
+            Logger.Info($"{Context.ConnectionId} client connected");
             return base.OnConnected();
         }
 
         public override Task OnDisconnected(bool stopCalled)
         {
-            Logger.Info($"{Clients.Caller} client disconnected");
+            Console.WriteLine($"{Context.ConnectionId} client disconnected");
+            Logger.Info($"{Context.ConnectionId} client disconnected");
             return base.OnDisconnected(stopCalled);
         }
 
