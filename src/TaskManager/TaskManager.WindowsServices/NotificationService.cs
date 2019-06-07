@@ -10,41 +10,42 @@ using System.Threading.Tasks;
 using TaskManager.Business;
 using System.Timers;
 using TaskManager.Models.DTO;
+using Logging;
+using log4net;
 
 namespace TaskManager.WindowsServices
 {
     public partial class NotificationService : ServiceBase
     {
-        private static NotificationManager notificationManagerManager = new NotificationManager();
-        private Timer timer { get; }
+        private NotificationManager notificationManagerManager = new NotificationManager();
+        private ILog Logger = AppLogger.GetLogger<NotificationService>();
 
+        private Timer timer { get; set; }
 
         public NotificationService()
         {
-            timer = new Timer();
-            timer.Elapsed += new ElapsedEventHandler(PushNotificationsToClient);
-            timer.Interval = 5000;
-            timer.Enabled = true;
             InitializeComponent();
+            AppLogger.ConfigureFileAppender("ServiceLogs", true);
         }
 
         protected override void OnStart(string[] args)
         {
+            Logger.Info("Service started");
+            timer = new Timer();
+            timer.Elapsed += new ElapsedEventHandler(PushNotificationsToClient);
+            timer.Interval = 5000;
+            timer.Enabled = true;
+            timer.Start();
         }
 
         protected override void OnStop()
         {
+            Logger.Info("Service stopped");
         }
 
         private void PushNotificationsToClient(object sender, ElapsedEventArgs e)
         {
-            var startDate = Convert.ToDateTime("2019-05-31 17:00:00.433");
-            var notifications = new List<UserTaskDto>();
-            notifications = notificationManagerManager.GetNotifications(startDate);
-            if (notifications.Any())
-            {
-                //call hub
-            }
+            Logger.Info("Service triggering notification");
         }
     }
 }
