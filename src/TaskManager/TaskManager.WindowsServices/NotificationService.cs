@@ -28,7 +28,7 @@ namespace TaskManager.WindowsServices
         {
             InitializeComponent();
             AppLogger.ConfigureFileAppender("ServiceLogs", true);
-            NotificationHubConnection = new HubConnection("http://localhost:9080");
+            NotificationHubConnection = new HubConnection("http://localhost:9080/signalr");
             NotificationHubProxy = NotificationHubConnection.CreateHubProxy("TaskManagerHub");
         }
 

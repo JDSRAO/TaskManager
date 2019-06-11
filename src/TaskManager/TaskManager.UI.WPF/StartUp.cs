@@ -15,7 +15,11 @@ namespace TaskManager.UI.WPF
             var cwd = AppDomain.CurrentDomain.BaseDirectory;
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = $"{cwd}/TaskManager.NotificationHub.exe";
+            start.WorkingDirectory = cwd;
             start.WindowStyle = ProcessWindowStyle.Hidden;
+
+            Process.Start(start);
+
             var serviceName = "Task Manager Notification Service";
             ServiceController service = new ServiceController(serviceName);
             if(service.Status != ServiceControllerStatus.Running)

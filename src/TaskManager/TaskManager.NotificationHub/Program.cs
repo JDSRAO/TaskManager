@@ -21,7 +21,8 @@ namespace TaskManager.NotificationHub
             string url = "http://localhost:9080";
             AppLogger.ConfigureFileAppender("SingalRHub", true);
             var Logger = AppLogger.GetLogger<Program>();
-            using (WebApp.Start(url))
+            var startup = new Startup();
+            using (WebApp.Start(url, startup.Configuration))
             {
                 Logger.Info($"Server running on {url}");
                 Console.WriteLine("Server running on {0}", url);
