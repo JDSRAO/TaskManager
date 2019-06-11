@@ -57,6 +57,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -95,6 +96,7 @@
     <Compile Include="Convertors\HumanizeDateConvertor.cs" />
     <Compile Include="Convertors\SetVisibilityFromBoolConvertor.cs" />
     <Compile Include="LoggingHelper.cs" />
+    <Compile Include="StartUp.cs" />
     <Compile Include="Views\BaseViewModel.cs" />
     <Compile Include="Views\Shell\MainWindowModel.cs" />
     <Compile Include="Views\TaskListView\TaskListView.xaml.cs">
@@ -155,6 +157,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config">
       <SubType>Designer</SubType>
