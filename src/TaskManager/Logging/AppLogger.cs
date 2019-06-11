@@ -20,7 +20,7 @@ namespace Logging
         public static void ConfigureFileAppender(string logFile, bool isRollingFile = false)
         {
             IAppender fileAppender = null;
-            var fileName = $"{Directory.GetCurrentDirectory()}/logs/{logFile}";
+            var fileName = $"{AppDomain.CurrentDomain.BaseDirectory}/logs/{logFile}";
             CreateDirectoryIfNotExists(fileName);
             fileAppender = (isRollingFile ? GetRollingFileAppender(fileName) : GetFileAppender(fileName));
             BasicConfigurator.Configure(fileAppender);

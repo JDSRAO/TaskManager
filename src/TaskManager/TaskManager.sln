@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.UI.WPF", "TaskM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{BF2309F3-5CBF-4395-BD30-59B0BE5F5A6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.WindowsServices", "TaskManager.WindowsServices\TaskManager.WindowsServices.csproj", "{BC5312AE-632A-4742-99F9-AEB972789B29}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TaskManager.Installer", "TaskManager.Installer\TaskManager.Installer.vdproj", "{877FA1FB-31B2-4493-A7C3-9716D562F7BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.NotificationHub", "TaskManager.NotificationHub\TaskManager.NotificationHub.csproj", "{24E854EA-9806-4F6D-9D0C-6B298ABB4BA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +45,16 @@ Global
 		{BF2309F3-5CBF-4395-BD30-59B0BE5F5A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF2309F3-5CBF-4395-BD30-59B0BE5F5A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF2309F3-5CBF-4395-BD30-59B0BE5F5A6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC5312AE-632A-4742-99F9-AEB972789B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC5312AE-632A-4742-99F9-AEB972789B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC5312AE-632A-4742-99F9-AEB972789B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC5312AE-632A-4742-99F9-AEB972789B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{877FA1FB-31B2-4493-A7C3-9716D562F7BA}.Debug|Any CPU.ActiveCfg = Debug
+		{877FA1FB-31B2-4493-A7C3-9716D562F7BA}.Release|Any CPU.ActiveCfg = Release
+		{24E854EA-9806-4F6D-9D0C-6B298ABB4BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E854EA-9806-4F6D-9D0C-6B298ABB4BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24E854EA-9806-4F6D-9D0C-6B298ABB4BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24E854EA-9806-4F6D-9D0C-6B298ABB4BA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

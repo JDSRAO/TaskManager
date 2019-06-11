@@ -9,7 +9,7 @@ using TaskManager.Models.DTO;
 
 namespace TaskManager.Models
 {
-    public class MapperConfiguration
+    public class DataMapper
     {
         private static bool _isInitialized;
 
@@ -24,6 +24,11 @@ namespace TaskManager.Models
                 });
                 _isInitialized = true;
             }
+        }
+
+        public static T Convert<T>(object source)
+        {
+            return Mapper.Map<T>(source);
         }
     }
 }
