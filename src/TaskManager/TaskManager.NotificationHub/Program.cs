@@ -18,8 +18,8 @@ namespace TaskManager.NotificationHub
             // use http://*:8080 to bind to all addresses. 
             // See http://msdn.microsoft.com/library/system.net.httplistener.aspx 
             // for more information.
-            string url = "http://localhost:9080";
-            AppLogger.ConfigureFileAppender("SingalRHub", true);
+            string url = AppConfiguration.NotificationHub_Url;
+            AppLogger.ConfigureFileAppender(AppConfiguration.ApplicationLogFileName, true);
             var Logger = AppLogger.GetLogger<Program>();
             var startup = new Startup();
             using (WebApp.Start(url, startup.Configuration))
