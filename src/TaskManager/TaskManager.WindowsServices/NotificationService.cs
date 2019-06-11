@@ -40,7 +40,7 @@ namespace TaskManager.WindowsServices
             Logger.Info("Service started");
             timer = new Timer();
             timer.Elapsed += new ElapsedEventHandler(PushNotificationsToClient);
-            timer.Interval = Convert.ToDouble(AppConfiguration.NotificationHub_TriggerInterval);
+            timer.Interval = Convert.ToDouble(AppConfiguration.NotificationHub_TriggerInterval) * 1000;
             timer.Enabled = true;
             timer.Start();
         }
