@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +46,13 @@ namespace TaskManager.UI.WPF
             var context = new MainWindowModel();
             context.PublishNotifications += Context_PublishNotifications;
             DataContext = context;
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            var context = (MainWindowModel) DataContext;
+            context.Dispose();
+            base.OnClosing(e);
         }
 
         private void Context_PublishNotifications(object sender, List<Models.DTO.UserTaskDto> e)

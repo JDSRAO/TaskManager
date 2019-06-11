@@ -11,7 +11,7 @@ using TaskManager.Models.DTO;
 
 namespace TaskManager.UI.WPF.Views.Shell
 {
-    public class MainWindowModel : BaseViewModel
+    public class MainWindowModel : BaseViewModel, IDisposable
     {
         public ObservableCollection<UserTaskDto> Notifications
         {
@@ -47,6 +47,11 @@ namespace TaskManager.UI.WPF.Views.Shell
             {
                 PublishNotifications?.Invoke(this, notifications);
             }
+        }
+
+        public void Dispose()
+        {
+            NotificationHubConnection.Stop();
         }
     }
 }
