@@ -10,8 +10,6 @@ namespace TaskManager.NotificationHub
     internal class AppConfiguration
     {
         public static string NotificationHub_Url { get; } = GetValueFromConfig("notificationHub:Url");
-        public static string NotificationHub_Name { get; } = GetValueFromConfig("notificationHub:Name");
-        public static string NotificationHub_Actions_UnReadNotifications { get; } = GetValueFromConfig("notificationHub:Actions:UnReadNotifications");
         public static string ApplicationLogFileName { get; } = GetValueFromConfig("logging:fileName");
 
         private static string GetValueFromConfig(string key)
