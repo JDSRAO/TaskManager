@@ -27,9 +27,9 @@ namespace TaskManager.WindowsServices
         public NotificationService()
         {
             InitializeComponent();
-            AppLogger.ConfigureFileAppender("ServiceLogs", true);
-            NotificationHubConnection = new HubConnection("http://localhost:9080/signalr");
-            NotificationHubProxy = NotificationHubConnection.CreateHubProxy("TaskManagerHub");
+            AppLogger.ConfigureFileAppender(AppConfiguration.ApplicationLogFileName, true);
+            NotificationHubConnection = new HubConnection(AppConfiguration.NotificationHub_Url);
+            NotificationHubProxy = NotificationHubConnection.CreateHubProxy(AppConfiguration.NotificationHub_Name);
         }
 
         protected async override void OnStart(string[] args)
@@ -77,7 +77,7 @@ namespace TaskManager.WindowsServices
             Logger.Info("Service triggering notification");
             try
             {
-                NotificationHubProxy.Invoke("PushNotifications");
+                NotificationHubProxy.Invoke(AppConfiguration.NotificationHub_Actions_PushNotifications);
             }
             catch (Exception ex)
             {
