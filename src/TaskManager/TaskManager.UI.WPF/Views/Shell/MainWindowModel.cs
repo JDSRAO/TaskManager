@@ -34,7 +34,7 @@ namespace TaskManager.UI.WPF.Views.Shell
         public MainWindowModel()
         {
             notificationManagerManager = new NotificationManager();
-            NotificationHubConnection = new HubConnection("http://localhost:8080");
+            NotificationHubConnection = new HubConnection("http://localhost:9080");
             NotificationHubProxy = NotificationHubConnection.CreateHubProxy("TaskManagerHub");
             NotificationHubProxy.On<List<UserTaskDto>>("UnReadNotifications", OnNotificationsArrival);
             NotificationHubConnection.Start().Wait();
