@@ -15,7 +15,7 @@ namespace TaskManager.NotificationHub
     public class NotificationHub : Hub
     {
         private NotificationManager notificationManagerManager = new NotificationManager();
-        private ILog Logger = AppLogger.GetLogger<Program>();
+        private ILog Logger = AppLogger.GetLogger<NotificationHub>();
 
         public override Task OnConnected()
         {
