@@ -11,6 +11,7 @@ namespace TaskManager.WindowsServices
     {
         public static string NotificationHub_Url { get; } = GetValueFromConfig("notificationHub:Url");
         public static string NotificationHub_Name { get; } = GetValueFromConfig("notificationHub:Name");
+        public static string NotificationHub_TriggerInterval { get; } = GetValueFromConfig("notificationHub:TriggerInterval");
         public static string NotificationHub_Actions_PushNotifications { get; } = GetValueFromConfig("notificationHub:Actions:PushNotifications");
         public static string ApplicationLogFileName { get; } = GetValueFromConfig("logging:fileName");
 
