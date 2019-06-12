@@ -20,7 +20,15 @@ namespace TaskManager.UI.WPF
 
         public App()
         {
-            AppLogger.ConfigureFileAppender("AppLogs", true);
+            AppLogger.ConfigureFileAppender(AppConfiguration.ApplicationLogFileName, true);
+            try
+            {
+                StartUp.Initialize();
+            }
+            catch (Exception ex)
+            {
+                Logger.Error("Error with startup", ex);
+            }
 
         }
 

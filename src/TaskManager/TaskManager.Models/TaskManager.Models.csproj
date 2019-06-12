@@ -48,7 +48,7 @@
     <Compile Include="DTO\BaseDto.cs" />
     <Compile Include="DTO\UserTaskDto.cs" />
     <Compile Include="Entity\BaseEntity.cs" />
-    <Compile Include="MapperConfiguration.cs" />
+    <Compile Include="DataMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity\UserTask.cs" />
   </ItemGroup>
