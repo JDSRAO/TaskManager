@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Notification Window" Height="450" Width="800"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
-    <Grid RenderTransformOrigin="0,1" >
+    <!--<Grid RenderTransformOrigin="0,1" >
 
-        <!-- Notification area -->
+        --><!-- Notification area --><!--
         <Border BorderThickness="1" Background="Beige" BorderBrush="Black" CornerRadius="10">
             <StackPanel Margin="20">
                 <TextBlock TextWrapping="Wrap" Margin="5">
@@ -21,8 +21,8 @@
             </StackPanel>
         </Border>
 
-        <!-- Animation -->
-        <!--<Grid.Triggers>
+        --><!-- Animation --><!--
+        <Grid.Triggers>
             <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                 <BeginStoryboard>
                     <Storyboard>
@@ -37,11 +37,35 @@
                     </Storyboard>
                 </BeginStoryboard>
             </EventTrigger>
-        </Grid.Triggers>-->
+        </Grid.Triggers>
 
         <Grid.RenderTransform>
             <ScaleTransform ScaleY="1" />
         </Grid.RenderTransform>
 
+    </Grid>-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Grid.Column="0" Grid.Row="1"
+                 ItemsSource="{Binding Tasks, Mode=OneWay}"
+                 x:Name="tasks">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label Content="{Binding Path=Title}" 
+                                   Style="{StaticResource Title}"/>
+                        <Label Content="{Binding Path=Description}"/>
+                        <Label FontWeight="Bold">Total Time Taken :</Label>
+                        <Label  Content="{Binding Path=TotalTimeTaken, Converter={StaticResource HumanizeDateConvertor}, ConverterParameter=TotalTimeTaken}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

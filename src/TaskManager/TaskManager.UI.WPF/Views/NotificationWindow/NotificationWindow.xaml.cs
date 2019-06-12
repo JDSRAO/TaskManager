@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using TaskManager.Models.DTO;
 
 namespace TaskManager.UI.WPF.Views.NotificationWindow
 {
@@ -20,9 +21,11 @@ namespace TaskManager.UI.WPF.Views.NotificationWindow
     /// </summary>
     public partial class NotificationWindow : Window
     {
-        public NotificationWindow()
+        public NotificationWindow(List<UserTaskDto> notifications = null)
         {
+            var context = new NotificationWindowModel(notifications);
             InitializeComponent();
+            DataContext = context;
             Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, new Action(() =>
             {
                 var workingArea = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea;
@@ -32,6 +35,12 @@ namespace TaskManager.UI.WPF.Views.NotificationWindow
                 this.Left = corner.X - this.ActualWidth - 100;
                 this.Top = corner.Y - this.ActualHeight;
             }));
+        }
+
+        public void UpdateNotifications(List<UserTaskDto> notifications)
+        {
+            var context = (NotificationWindowModel)DataContext;
+            context.UpdateNotifications(notifications);
         }
     }
 }

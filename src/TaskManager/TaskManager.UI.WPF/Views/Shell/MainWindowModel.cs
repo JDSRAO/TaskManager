@@ -42,11 +42,7 @@ namespace TaskManager.UI.WPF.Views.Shell
 
         private void OnNotificationsArrival(List<UserTaskDto> notifications)
         {
-            Console.WriteLine(notifications.Count);
-            if (notifications.Any())
-            {
-                PublishNotifications?.Invoke(this, notifications);
-            }
+            PublishNotifications?.Invoke(this, notifications);
         }
 
         public void Dispose()

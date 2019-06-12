@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TaskManager.UI.WPF.Views.NotificationWindow;
 using TaskManager.UI.WPF.Views.Shell;
 using TaskManager.UI.WPF.Views.TaskWindow;
 
@@ -23,6 +24,9 @@ namespace TaskManager.UI.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static bool isNotificationsWindowOpen = false;
+        private NotificationWindow notificationWindow { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -55,12 +59,27 @@ namespace TaskManager.UI.WPF
             base.OnClosing(e);
         }
 
-        private void Context_PublishNotifications(object sender, List<Models.DTO.UserTaskDto> e)
+        private void Context_PublishNotifications(object sender, List<Models.DTO.UserTaskDto> notifications)
         {
             this.Dispatcher.Invoke(() => 
             {
-                SetDataContext();
+                if(isNotificationsWindowOpen)
+                {
+                    notificationWindow.UpdateNotifications(notifications);
+                }
+                else
+                {
+                    notificationWindow = new NotificationWindow(notifications);
+                    notificationWindow.Closing += OnNotificationWindowClosing;
+                    notificationWindow.Show();
+                    isNotificationsWindowOpen = true;
+                }
             });
+        }
+
+        private void OnNotificationWindowClosing(object sender, CancelEventArgs e)
+        {
+            isNotificationsWindowOpen = false;
         }
     }
 }
