@@ -33,7 +33,7 @@ namespace TaskManager.NotificationHub
 
         public void PushNotifications()
         {
-            var startDate = Convert.ToDateTime("2019-05-31 17:00:00.433");
+            var startDate = Convert.ToDateTime("2019-05-31 18:00:00.000");
             var notifications = notificationManagerManager.GetNotifications(startDate);
             if (notifications.Any())
             {
