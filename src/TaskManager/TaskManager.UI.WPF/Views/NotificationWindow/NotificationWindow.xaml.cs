@@ -42,5 +42,10 @@ namespace TaskManager.UI.WPF.Views.NotificationWindow
             var context = (NotificationWindowModel)DataContext;
             context.UpdateNotifications(notifications);
         }
+
+        private void SnoozeButton_Click(object sender, RoutedEventArgs e)
+        {
+            var currentTask = (UserTaskDto) tasks.SelectedItem;
+        }
     }
 }

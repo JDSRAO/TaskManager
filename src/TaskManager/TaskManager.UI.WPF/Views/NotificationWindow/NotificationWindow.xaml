@@ -63,6 +63,9 @@
                         <Label Content="{Binding Path=Description}"/>
                         <Label FontWeight="Bold">Total Time Taken :</Label>
                         <Label  Content="{Binding Path=TotalTimeTaken, Converter={StaticResource HumanizeDateConvertor}, ConverterParameter=TotalTimeTaken}"/>
+                        <Button x:Name="SnoozeButton"
+                                Click="SnoozeButton_Click"
+                                Content="Snooze"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
