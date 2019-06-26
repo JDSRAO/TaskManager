@@ -35,6 +35,6 @@ Please find below the installation guidelines:
 
 ## Usage
 
-## Lincense
+## License
 Please refer [here](LICENSE) for license information
 
