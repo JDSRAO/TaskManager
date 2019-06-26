@@ -8,3 +8,7 @@ Ever wondered how much time does your task takes but never quite got a solution?
 - Search tasks
 - Capture time spent on task
 - Notifications for target date
+
+## Lincense
+Please refer [here](LICENSE) for license information
+
